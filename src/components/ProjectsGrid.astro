@@ -1,0 +1,22 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+// import ProjectTile from "@/components/react/ProjectTile";
+import ProjectTile from "./react/ProjectTile";
+const { projects } = Astro.props;
+const { title, description, project_list } = projects;
+---
+
+<section class="section key-feature relative">
+  <div class="container">
+    <div class="row justify-between text-center lg:text-start ">
+      <div class="lg:col-7">
+        <h1 set:html={markdownify(title)} />
+      </div>
+      <div class="mt-6 lg:col-5 lg:mt-0 text-text-secondary">
+        <p set:html={markdownify(description)} />
+      </div>
+    </div>
+    <ProjectTile project_list={project_list} client:load />
+  </div>
+</section>
