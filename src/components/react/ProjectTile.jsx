@@ -8,20 +8,27 @@ const ProjectTile = ({ project_list }) => {
       {project_list.map((item, i) => {
         const FeatherIcon = Icon[humanize(item.icon)];
         return (
-          <div key={i} className="flex flex-col border-gray-200 shadow dark:bg-gray-800 dark:border-gray-70 rounded-lg bg-surface transition-all hover:scale-105">
-            <a href={item.url}>
-              <img class="rounded-t-lg" src="/images/programming-1.webp" alt="" />
-            </a>
-            <div class="p-5">
-              <a href={item.url} className="text-secondary">
-                <span className="icon">
+          <div key={i} className="card card-compact bg-base-100 w-96 shadow-xl transition-all hover:scale-105">
+            <figure>
+              <a href={item.url}>
+                <img
+                  src="/images/programming-1.webp"
+                  alt="" />
+              </a>
+            </figure>
+            <div className="card-body">
+              <a href={item.url}>
+                <span className="icon text-secondary">
                   <FeatherIcon />
                 </span>
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{item.title}</h5>
+                <h2 className="card-title">{item.title}</h2>
               </a>
               <p>{item.start_date} - {item.end_date}</p>
               <p>{item.company}</p>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{__html: markdownify(item.desc)}}></p>
+              <p dangerouslySetInnerHTML={{__html: markdownify(item.desc)}}></p>
+              <div className="card-actions justify-end">
+                <a href={item.url} class="btn btn-primary">Read More</a>
+              </div>
             </div>
           </div>
         );

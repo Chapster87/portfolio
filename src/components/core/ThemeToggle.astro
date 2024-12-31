@@ -22,9 +22,10 @@ import { IoSunny, IoMoon } from "react-icons/io5";
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
+    // Use system setting for dark-mode selection- disabled for now
+    // if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    //   return "dark";
+    // }
     return "light";
   })();
 
@@ -33,8 +34,11 @@ import { IoSunny, IoMoon } from "react-icons/io5";
     const handleToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
+      // const isDark = element.dataset.theme === 'dark';
 
       const isDark = element.classList.contains("dark");
+      element.dataset.theme = isDark ? 'dark': 'emerald'; 
+      
       localStorage.setItem("theme", isDark ? "dark" : "light");
       //@ts-ignore
       document.getElementById("theme_label").textContent = isDark

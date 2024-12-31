@@ -258,16 +258,21 @@ const _noindex =
           ) {
             return localStorage.getItem("theme");
           }
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            return "dark";
-          }
+          // Use system setting for dark-mode selection - disabled for now
+          // if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          //   return "dark";
+          // }
           return "light";
         })();
 
+        const element = document.documentElement;
+
         if (theme === "light") {
-          document.documentElement.classList.remove("dark");
+          element.classList.remove("dark");
+          element.dataset.theme = 'emerald'; 
         } else {
-          document.documentElement.classList.add("dark");
+          element.classList.add("dark");
+          element.dataset.theme = 'dark'; 
         }
 
         window.localStorage.setItem("theme", theme || "light");
