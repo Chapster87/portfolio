@@ -26,7 +26,7 @@ const transparencies = [
         <div class="flex flex-row flex-wrap justify-center items-center">
           {transparencies.map((exposure) => (
             <div class={`w-auto px-3 h-20 bg-${color}${exposure} m-2 border-border border-2 rounded` }>
-              <p class={`${color.startsWith('text') ? 'dark:text-black text-white' : "text-text text-center"}`}>
+              <p class={`${color.startsWith('text') ? 'dark:text-black text-white' : "text-center"}`}>
                 {color}
                 {exposure}
               </p>

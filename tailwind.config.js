@@ -9,11 +9,10 @@ if (theme_config.fonts.font_family.secondary) {
   fontSecondaryType = theme_config.fonts.font_family.secondary_type;
 }
 
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  safelist: [{ pattern: /^col-/ }, ...theme_config.colors.flatMap((color) => [{ pattern: new RegExp(`bg-${color}`) }]), {pattern: /^btn-/}],
+  safelist: [{ pattern: /^col-/ }],
   darkMode: "selector",
   theme: {
     container: {
@@ -21,12 +20,6 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
-      colors: {
-        ...theme_config.colors.reduce((acc, key) => {
-          acc[key] = 'rgba(var(--' + key + '))';
-          return acc;
-        }, {}),
-      },
       fontFamily: {
         primary: ["var(--font-primary)", fontPrimaryType],
         secondary: ["var(--font-secondary)", fontSecondaryType],
@@ -89,6 +82,6 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["emerald", "dark"],
+    themes: ["emerald", "dark"]
   },
 };

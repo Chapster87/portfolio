@@ -10,7 +10,7 @@ const HomepageFeature = ({ feature_list }) => {
         return (
           <div
             key={i}
-            className="flex flex-col justify-between rounded-lg bg-surface p-4 shadow-lg hover:shadow-xl hover:shadow-secondary/50 transition-all hover:scale-105"
+            className="flex flex-col justify-between rounded-lg bg-base-200 p-4 shadow-lg hover:shadow-xl hover:shadow-secondary/50 transition-all hover:scale-105"
           >
             <div>
               <div className="flex flex-row items-center">
