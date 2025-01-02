@@ -85,6 +85,10 @@ module.exports = {
         },
         { values: theme('textShadow') }
       )
-    })
+    }),
+    require('daisyui'),
   ],
+  daisyui: {
+    themes: ["emerald", "dark"],
+  },
 };

@@ -1,16 +1,16 @@
 ---
 import FeatherIcon from "@/components/react/FeatherIcon";
 
-const { counter } = Astro.props;
+const { counter, className } = Astro.props;
 ---
 
-<div class="counter mt-16">
+<div class={'counter ' + className}>
   <div
-    class="flex justify-center row mx-0 rounded-[20px] bg-surface px-10 shadow-lg lg:py-8"
+    class="flex justify-center row mx-0 rounded-[20px] bg-surface px-10 shadow-lg lg:py-4"
   >
     {
       counter.map((item: any) => (
-        <div class="border-border sm:col-6 lg:col-3 px-10 py-10 text-center lg:border-r lg:py-0 last:lg:border-none">
+        <div class="border-border col px-5 py-5 text-center lg:border-r lg:py-0 last:lg:border-none">
           <h3 class="flex items-center justify-center gap-1">
             <span class="count" aria-valuenow={item.number}>
               0

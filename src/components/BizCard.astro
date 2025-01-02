@@ -1,0 +1,80 @@
+---
+import CounterComponent from "@/components/CounterComponent.astro";
+import FeatherIcon from "@/components/react/FeatherIcon";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const { card_data } = Astro.props;
+const { name, title, image, resume_url, email, github_url, linkedin_url } = card_data;
+---
+
+<section class="personal-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto">
+        <img class="w-36 h-36 p-2 rounded-full ring-4 ring-primary dark:ring-surface" src={image} alt="Bordered avatar">
+      </div>
+      <div class="col">
+        <h2 set:html={markdownify(name)}/>
+        <p set:html={markdownify(title)}/>
+        <div class="row mt-3">
+          <div class="col-auto pr-0">
+            <a
+              class="btn btn-neutral"
+              aria-label="linkedin"
+              href={linkedin_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <FeatherIcon name='linkedin' size={20} client:load />
+            </a>
+          </div>
+          <div class="col-auto pl-3 pr-0">
+            <a
+              class="btn btn-neutral"
+              aria-label="github"
+              href={github_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <FeatherIcon name='gitHub' size={20} client:load />
+            </a>
+          </div>
+          <div class="col-auto pl-3 pr-0">
+            <a 
+              class="btn btn-neutral"
+              aria-label="email"
+              href={`mailto:${email}`}
+            >
+              <FeatherIcon name='send' size={20} client:load />
+            </a>
+          </div>
+          <div class="col pl-3">
+            <a href={resume_url} target="_blank" class="btn btn-primary w-full">Download Resume <FeatherIcon name='download' size={20} client:load /></a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <CounterComponent
+      className="mt-5"
+      counter={[
+        {
+          name: "Years of Experience",
+          number: 15,
+          icon: "plus",
+        },
+        {
+          name: "Sites Launched",
+          number: 20,
+          icon: "plus",
+        },
+        {
+          name: "Cups of Coffee/Energy Drinks",
+          number: '10000',
+          icon: "coffee",
+        },
+      ]}
+    />
+    <!-- <p class="text-text-disabled text-sm text-center mt-4">The numbers above might not reflect reality, but hey, we're not taking the blame!</p> -->
+  </div>
+</section>

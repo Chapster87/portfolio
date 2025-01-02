@@ -61,10 +61,10 @@
   li {
     @apply mr-2 inline-block;
     a {
-      @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-center transition-all duration-200 hover:bg-primary;
+      @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-black dark:bg-white text-center transition-all duration-200 hover:bg-primary;
 
       svg {
-        @apply m-auto h-11 fill-gray-600 text-xl;
+        @apply m-auto h-11 fill-gray-100 dark:fill-gray-600 text-xl;
       }
 
       path {

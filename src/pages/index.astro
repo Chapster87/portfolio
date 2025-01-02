@@ -1,26 +1,103 @@
 ---
 import Section from "@/components/core/Section.astro";
+import BizCard from "@/components/BizCard.astro"
+import WorkExp from "@/components/react/WorkExp"
 import Features from "@/components/Features.astro";
 import Testimonial from "@/components/Testimonial.astro";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import { getEntry } from "astro:content";
+import { markdownify } from "@/lib/utils/textConverter";
 
 const homepage = await getEntry("homepage", "index");
-// console.log(homepage);
-const { banner, sections, features, testimonial } = homepage.data;
+const { hero, summary, banner, sections, features, testimonial } = homepage.data;
+const employment = await getEntry("workExp", "index");
+const { employment_history } = employment.data;
 const call_to_action = homepage.data.call_to_action;
 const { Content } = await homepage.render();
 ---
 
 <Base>
+  <!-- hero -->
+  <section class="pt-16 pb-7">
+    <div class="container mx-auto lg:w-3/4 xl:w-1/2">
+      <div class="row animate-fade-in">
+        <section>
+          <BizCard card_data={hero} />
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- summary -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row animate-fade-in">
+        <section>
+          <h2 class="mb-3">About Me</h2>
+          <p set:html={markdownify(summary)} />
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- work_exp -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row animate-fade-in">
+        <h2 class="mb-3">Work Experience</h2>
+        <div class="pl-12">
+          <section>
+            <WorkExp employment_history={employment_history} />
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- education -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row animate-fade-in">
+        <section>
+          <h2 class="mb-3">Education</h2>
+          <p set:html={markdownify(summary)} />
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row animate-fade-in">
+        <section>
+          <h2 class="mb-3">Skills</h2>
+          <p set:html={markdownify(summary)} />
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- certifications -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row animate-fade-in">
+        <section>
+          <h2 class="mb-3">Certifications</h2>
+          <p set:html={markdownify(summary)} />
+        </section>
+      </div>
+    </div>
+  </section>
+
   <!-- banner -->
   <section class="py-16">
     <div class="container">
       <section class="multi-section lg:mb-5 animate-fade-in">
         <Section section={banner} />
         <Content />
-      </div>
+      </section>
     </div>
   </section>
   <!-- multi section -->

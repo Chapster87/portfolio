@@ -13,6 +13,21 @@ const pagesCollection = defineCollection({
 
 const indexSchema = z.intersection(
   z.object({
+    hero: z.object({
+      name: z.string(),
+      title: z.string(),
+      image: z.string(),
+      resume_url: z.string(),
+      email: z.string(),
+      github_url: z.string(),
+      linkedin_url: z.string(),
+    }),
+    summary: z.string(),
+    // workExp: z.object({
+    //   employment_history:z.object({
+    //     title: z.string()
+    //   })
+    // }),
     banner: z.custom<Section>(),
     features: z.object({
       title: z.string(),
