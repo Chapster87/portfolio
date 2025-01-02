@@ -25,6 +25,6 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.astro"
-, "src/components/react/ProjectTile.jsx"  ],
+, "src/components/react/ProjectTile.jsx", "src/components/react/WorkExp.jsx"  ],
   "exclude": ["node_modules"]
 }
