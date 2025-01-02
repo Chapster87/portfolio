@@ -9,7 +9,6 @@
   & > .section:nth-child(even):not(.custom-position) .row {
     @apply md:flex-row-reverse;
   }
-
 }
 
 // badge
@@ -42,18 +41,11 @@
   &.dark {
     @apply bg-base-200;
   }
-
 }
-
 
 // container
 .container {
   @apply mx-auto max-w-[1202px] px-4;
-}
-
-// form style
-.form-inputs * {
-  @apply mb-5 leading-10;
 }
 
 // social icon style
@@ -93,7 +85,6 @@
     @apply text-sm hover:text-primary hover:underline;
   }
 }
-
 
 //review-carousel
 .review {
@@ -155,8 +146,6 @@
     }
   }
 }
-
-
 
 //footer
 .footer {
@@ -221,24 +210,4 @@
   &-tag {
     @apply mb-5 inline-block h-5 rounded px-1 py-0.5 text-xs text-red-500;
   }
-}
-
-
-
-// form style
-.form-control,
-.form-select {
-  @apply h-[60px] w-full rounded-lg focus:border-primary focus:ring-transparent bg-transparent;
-}
-
-.form-inputs * {
-  @apply mb-5 leading-10;
-}
-
-.form-label {
-  @apply mb-2 block font-bold;
-}
-
-select:invalid {
-  color: #b0b0b0 !important;
 }
