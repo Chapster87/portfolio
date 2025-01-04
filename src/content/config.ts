@@ -17,10 +17,12 @@ const indexSchema = z.intersection(
       name: z.string(),
       title: z.string(),
       image: z.string(),
-      resume_url: z.string(),
-      email: z.string(),
-      github_url: z.string(),
-      linkedin_url: z.string(),
+      action_urls: z.object({
+        linkedin_url: z.string(),
+        github_url: z.string(),
+        email: z.string(),
+        resume_url: z.string()
+      }),
     }),
     summary: z.string(),
     // workExp: z.object({

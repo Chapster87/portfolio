@@ -1,0 +1,50 @@
+---
+import FeatherIcon from "@/components/react/FeatherIcon";
+
+const { action_urls } = Astro.props;
+const { linkedin_url, github_url, email, resume_url } = action_urls;
+console.log(resume_url);
+---
+
+{linkedin_url && (
+  <div class="col sm:col-auto pr-0 mb-3">
+    <a
+      class="btn btn-neutral w-full"
+      aria-label="linkedin"
+      href={linkedin_url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
+      <FeatherIcon name='linkedin' size={20} client:load />
+    </a>
+  </div>
+)}
+{github_url && (
+  <div class="col sm:col-auto pl-3 pr-0 mb-3">
+    <a
+      class="btn btn-neutral w-full"
+      aria-label="github"
+      href={github_url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
+      <FeatherIcon name='gitHub' size={20} client:load />
+    </a>
+  </div>
+)}
+{email && (
+  <div class="col sm:col-auto pl-3 sm:pr-0 mb-3">
+    <a 
+      class="btn btn-neutral w-full"
+      aria-label="email"
+      href={`mailto:${email}`}
+    >
+      <FeatherIcon name='send' size={20} client:load />
+    </a>
+  </div>
+)}
+{resume_url && (
+  <div class="col sm:pl-3 mb-3 sm:mb-8">
+    <a href={resume_url} target="_blank" class="btn btn-primary w-full">Download Resume <FeatherIcon name='download' size={20} client:load /></a>
+  </div>
+)}
