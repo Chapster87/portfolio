@@ -20,9 +20,9 @@ const WorkExp = ({ employment_history }) => {
                     fill="currentColor"
                     className="text-primary h-5 w-5">
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                      clip-rule="evenodd" />
+                      clipRule="evenodd" />
                   </svg>
                 </div>
                 <div className={`timeline-end pl-2${i < (employment_history.length - 1) ? ' !mb-2' : ''}`}>
@@ -54,7 +54,7 @@ const WorkExp = ({ employment_history }) => {
                             )}
                           </div>
                           {(notes && notes.length > 0) && (
-                            <ul class="list-disc ml-4">
+                            <ul className="list-disc ml-4">
                               {notes.map((note, i) => (
                                 <li key={i}>{note}</li>
                               ))}

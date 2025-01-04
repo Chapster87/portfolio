@@ -25,12 +25,14 @@ const indexSchema = z.intersection(
       }),
     }),
     summary: z.string(),
-    // workExp: z.object({
-    //   employment_history:z.object({
-    //     title: z.string()
-    //   })
-    // }),
-    banner: z.custom<Section>(),
+    education: z.object({
+      school: z.string(),
+      start_year: z.string(),
+      end_year: z.string(),
+      location: z.string(),
+      degree: z.string(),
+      concentration: z.array(z.string()),
+    }),
     features: z.object({
       title: z.string(),
       description: z.string(),
