@@ -27,7 +27,7 @@ const ProjectTile = ({ project_list }) => {
               <p>{item.company}</p>
               <p dangerouslySetInnerHTML={{__html: markdownify(item.desc)}}></p>
               <div className="card-actions justify-end">
-                <a href={item.url} class="btn btn-primary">Read More</a>
+                <a href={item.url} className="btn btn-primary">Read More</a>
               </div>
             </div>
           </div>

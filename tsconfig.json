@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es6",
+    "strictNullChecks": false,
     "allowJs": true,
     "strict": true,
     "noImplicitAny": false,
@@ -24,7 +25,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "**/*.astro"
-, "src/components/react/ProjectTile.jsx", "src/components/react/WorkExp.jsx"  ],
+    "**/*.astro", 
+    "src/components/react/ProjectTile.jsx", 
+    "src/components/react/WorkExp.jsx"  ],
   "exclude": ["node_modules"]
 }

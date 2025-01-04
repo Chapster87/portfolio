@@ -12,10 +12,10 @@ import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const homepage = await getEntry("homepage", "index");
-const { hero, summary, education, sections, features, testimonial } = homepage.data;
-const employment = await getEntry("workExp", "index");
-const { employment_history } = employment.data;
-const call_to_action = homepage.data.call_to_action;
+const { hero, summary, education, sections, features, testimonial } = homepage && homepage.data;
+const employment = await getEntry('workExp', 'index');
+const { employment_history } = employment && employment.data;
+const call_to_action = homepage && homepage.data.call_to_action;
 ---
 
 <Base>
