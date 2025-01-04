@@ -15,38 +15,6 @@
   @apply text-base-100;
 }
 
-// badge
-.badge {
-  @apply relative top-[0.625rem] rounded-md px-[0.8rem] py-[0.45rem] text-xs font-semibold text-white;
-  &.primary {
-    @apply bg-primary;
-  }
-  &.secondary {
-    @apply bg-secondary;
-  }
-  &.accent {
-    @apply bg-accent;
-  }
-  &.danger {
-    @apply bg-error;
-  }
-  &.success {
-    @apply bg-success;
-  }
-  &.warning {
-    @apply bg-warning;
-  }
-  &.info {
-    @apply bg-info;
-  }
-  &.light {
-    @apply bg-white;
-  }
-  &.dark {
-    @apply bg-base-200;
-  }
-}
-
 // container
 .container {
   @apply mx-auto max-w-[1202px] px-4;

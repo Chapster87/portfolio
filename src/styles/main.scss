@@ -9,8 +9,8 @@
 }
 
 @layer components {
+  @include meta.load-css("typography");
   @include meta.load-css("components");
   @include meta.load-css("navigation");
-  @include meta.load-css("utilities");
   @include meta.load-css("buttons");
 }

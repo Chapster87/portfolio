@@ -9,7 +9,7 @@ const WorkExp = ({ employment_history }) => {
           {employment_history.map((job, i) => {
             const { employer, location, remote, positions } = job;
             return (
-              <li>
+              <li key={i}>
                 { i !== 0 && (
                   <hr />
                 )}
@@ -41,23 +41,22 @@ const WorkExp = ({ employment_history }) => {
                     positions.map((position, i) => {
                       const { title, start_date, end_date, notes } = position;
                       return ( 
-                        <div className={`employment-position p-2${i < (positions.length - 1) ? ' mb-2' : ''}`}>
+                        <div key={i} className={`employment-position p-2${i < (positions.length - 1) ? ' mb-2' : ''}`}>
                           <div className="flex items-center">
                             { title && ( <div className="text-lg font-black italic">{title}</div> )}
                             { ( start_date || end_date ) && (
-                              <>
-                                <span className="text-gray-400 px-2">-</span>
-                                <Calendar className="text-gray-400 pr-1"/>
-                                <time className="font-mono italic">
+                              <div className="badge badge-md badge-neutral ml-3">
+                                <Calendar className="pr-2"/>
+                                <time className="">
                                   { start_date && ( start_date ) }{ end_date && ( ` - ${end_date}`) }
                                 </time>
-                              </>
+                              </div>
                             )}
                           </div>
                           {(notes && notes.length > 0) && (
                             <ul class="list-disc ml-4">
                               {notes.map((note, i) => (
-                                <li>{note}</li>
+                                <li key={i}>{note}</li>
                               ))}
                             </ul>
                           )}

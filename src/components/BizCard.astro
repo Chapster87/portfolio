@@ -1,6 +1,7 @@
 ---
 import CounterComponent from "@/components/CounterComponent.astro";
 import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
 import BizCardActions from "@/components/BizCardActions.astro";
 
 const { card_data } = Astro.props;
@@ -10,7 +11,14 @@ const { name, title, image, action_urls } = card_data;
 <section class="personal-info">
   <div class="row">
     <div class="col sm:col-auto flex justify-center mb-4 sm:mb-0 pr-2">
-      <img class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-primary dark:ring-surface" src={image} alt="Bordered avatar">
+      <Image
+        class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-primary dark:ring-surface"
+        alt="Andy Chapman, headshot"
+        src={image}
+        width={144}
+        height={144}
+        loading="eager"
+      />
     </div>
     <div class="col pl-2">
       <h2 set:html={markdownify(name)}/>
