@@ -13,7 +13,6 @@ if (theme_config.fonts.font_family.secondary) {
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   safelist: [{ pattern: /^col-/ }],
-  darkMode: "selector",
   theme: {
     container: {
       center: true,
@@ -82,6 +81,24 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["emerald", "dark"]
+    themes: [
+      {
+        emerald: {
+          ...require("daisyui/src/theming/themes")["emerald"],
+          primary: "#00b140",
+          secondary: "#377cfb",
+          accent: "#f68067"
+        },
+      },
+      {
+        dim: {
+          ...require("daisyui/src/theming/themes")["dim"],
+          primary: "#00b140",
+          secondary: "#377cfb",
+          accent: "#f68067"
+        },
+      }
+    ]
   },
+  darkMode: ['selector', '[data-theme="dim"]']
 };
