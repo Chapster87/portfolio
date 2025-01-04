@@ -1,12 +1,10 @@
-import { markdownify } from "@/lib/utils/textConverter";
-
 const Education = ({ education_data }) => {
   const { school, start_year, end_year, location, degree, concentration } = education_data;
   return (
     <ul className="education-info">
       <li>
         {(school && location) && (
-          <div class="flex items-center">
+          <div className="flex items-center">
             <h3 className="text-lg font-black">{school}</h3><span className="font-bold pl-1">{`- ${location}`}</span>
           </div>
         )}

@@ -41,7 +41,7 @@ export interface Props {
    *
    * @see PageType
    */
-  entry_keys?: [keyof ContentEntryMap, string];
+  // entry_keys?: [keyof ContentEntryMap, string];
   /**
    * Override <title> og:title and twitter:title
    * @default config.site.title
@@ -73,7 +73,7 @@ export interface Props {
 
 // distructure frontmatters
 const {
-  entry_keys,
+  // entry_keys,
   title,
   description,
   author,
@@ -85,12 +85,12 @@ const {
 
 let page: PageType | undefined = undefined;
 
-if (entry_keys) {
-  const page_entry = await getEntry(...entry_keys);
-  if (page_entry) {
-    page = page_entry.data as PageType;
-  }
-}
+// if (entry_keys) {
+//   const page_entry = await getEntry(...entry_keys);
+//   if (page_entry) {
+//     page = page_entry.data as PageType;
+//   }
+// }
 const _title = title
   ? title
   : page?.document_title

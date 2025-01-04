@@ -4,13 +4,11 @@ import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getEntry } from "astro:content";
 
-const entry = await getEntry("contact", "index");
+const entry = await getEntry('pages', 'contact');
 const { contact_form_action } = config.params;
 ---
 
-<Base
-  entry_keys={["contact", "index"]}
->
+<Base>
   <section class=" pb-6 pt-16">
     <div class="container"><PageHeader page_data={entry.data} /></div>
   </section>

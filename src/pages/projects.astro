@@ -2,11 +2,11 @@
 import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
 import ProjectsGrid from "@/components/ProjectsGrid.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const projects = await getEntry("projects", "index");
-const { projects_grid } = projects.data;
-const { Content } = await projects.render();
+const { projects_grid } = projects && projects.data;
+const { Content } = projects && await render(projects);
 ---
 
 <Base>

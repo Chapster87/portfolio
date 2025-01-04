@@ -24,33 +24,16 @@
         {
           "name": "Does not exist",
           "url": "/does-not-exist"
-        },
-
-        {
-          "name": "Neither does this",
-          "url": "/neither-does-this"
-        },
-        {
-          "name": "Nope, not this one either",
-          "url": "/nope-not-this-one-either"
-        },
-        {
-          "name": "What about this?",
-          "url": "/what-about-this"
-        },
-        {
-          "name": "Come on, this one must exist",
-          "url": "/come-on-this-one-must-exist"
-        },
-        {
-          "name": "Do you expect this to exist?",
-          "url": "/do-you-expect-this-to-exist"
         }
       ]
     }
   ],
 
   "footer": [
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
     {
       "name": "Changelog",
       "url": "/changelog"
