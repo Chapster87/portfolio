@@ -37,7 +37,7 @@ import { IoSunny, IoMoon } from "react-icons/io5";
       // const isDark = element.dataset.theme === 'dark';
 
       const isDark = element.classList.contains("dark");
-      element.dataset.theme = isDark ? 'dim': 'emerald'; 
+      element.dataset.theme = isDark ? 'business': 'emerald'; 
       
       localStorage.setItem("theme", isDark ? "dark" : "light");
       //@ts-ignore

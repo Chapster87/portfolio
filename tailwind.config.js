@@ -87,19 +87,19 @@ module.exports = {
           ...require("daisyui/src/theming/themes")["emerald"],
           primary: "#00b140",
           secondary: "#377cfb",
-          accent: "#f68067",
+          accent: "#ea6947",
           "--bc": "0% 0 0"
         },
       },
       {
-        dim: {
-          ...require("daisyui/src/theming/themes")["dim"],
+        business: {
+          ...require("daisyui/src/theming/themes")["business"],
           primary: "#00b140",
           secondary: "#377cfb",
-          accent: "#f68067"
+          accent: "#ea6947",
         },
       }
     ]
   },
-  darkMode: ['selector', '[data-theme="dim"]']
+  darkMode: ['selector', '[data-theme="business"]']
 };
