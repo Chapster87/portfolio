@@ -3,6 +3,7 @@ import Section from "@/components/core/Section.astro";
 import BizCard from "@/components/BizCard.astro"
 import WorkExp from "@/components/react/WorkExp"
 import Education from "@/components/react/Education"
+import Certifications from "@/components/react/Certifications"
 import Features from "@/components/Features.astro";
 import Testimonial from "@/components/Testimonial.astro";
 import FeatherIcon from "@/components/react/FeatherIcon";
@@ -12,7 +13,7 @@ import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const homepage = await getEntry("homepage", "index");
-const { hero, summary, education, sections, features, testimonial } = homepage && homepage.data;
+const { hero, summary, education, certifications, sections, features, testimonial } = homepage && homepage.data;
 const employment = await getEntry('workExp', 'index');
 const { employment_history } = employment && employment.data;
 const call_to_action = homepage && homepage.data.call_to_action;
@@ -31,9 +32,9 @@ const call_to_action = homepage && homepage.data.call_to_action;
   </section>
 
   <!-- summary -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row animate-fade-in">
+  <section class="py-5 bg-neutral-content shadow-md animate-fade-in">
+    <div class="container !bg-transparent dark:text-neutral">
+      <div class="row">
         <section>
           <h2 class="flex items-center mb-3">
             <FeatherIcon name='thumbsUp' size={26} className="mr-2" client:load />
@@ -85,7 +86,7 @@ const call_to_action = homepage && homepage.data.call_to_action;
             Certifications
           </h2>
           <div class="px-5">
-            <p set:html={markdownify(summary)} />
+            <Certifications cert_data={certifications} />
           </div>
         </section>
       </div>
