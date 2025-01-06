@@ -5,10 +5,11 @@ import theme from "@/config/theme.json";
 import { plainify } from "@/lib/utils/textConverter";
 import Footer from "@/layouts/partials/Footer.astro";
 import Header from "@/layouts/partials/Header.astro";
+import BasicScripts from "@/components/core/BasicScripts.astro";
 import "@/styles/main.scss";
 
 import { AstroFont } from "astro-font";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 import { getEntry } from "astro:content";
 import type { PageType } from "@/content/page.types";
 import type { ContentEntryMap } from "astro:content";
@@ -209,7 +210,7 @@ const _noindex =
     <!-- meta-description -->
     <meta name="description" content={plainify(_description)} />
 
-    <ViewTransitions />
+    <ClientRouter />
 
     <!-- author from config.json -->
     <meta name="author" content={plainify(_author)} />
@@ -290,5 +291,6 @@ const _noindex =
       <slot />
     </main>
     <Footer />
+    <BasicScripts />
   </body>
 </html>

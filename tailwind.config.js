@@ -33,24 +33,14 @@ module.exports = {
       // Custom animations
       // Defined keyframes
       keyframes: {
-        "fade-in": {
-          '0%': { transform: 'translateY(15pt)', opacity: 0 },
-          '100%': { transform: 'translateY(0pt)' },
-        },
-        "fade-out": {
-          '0%': { transform: 'translateY(0pt)' },
-          '100%': { transform: 'translateY(15pt)', opacity: 0 },
-        },
-        "dissappear": {
-          '0%': { opacity: 1, visibility: 'visible' },
-          '100%': { visibility: 'hidden', opacity: 0},
-        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(2rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        }
       },
       // Defined animations
       animation: {
-        "fade-in": 'fade-in 1s ease-in-out',
-        "fade-out": 'fade-out 1s ease-in-out',
-        "dissappear": 'dissappear 1.5s ease-in-out forwards',
+        fade: 'fadeInUp 1s both',
       }
     },
   },
@@ -77,6 +67,9 @@ module.exports = {
         },
         { values: theme('textShadow') }
       )
+    }),
+    plugin(({ addVariant }) => {
+      addVariant('intersect', '&:not([no-intersect])');
     }),
     require('daisyui'),
   ],

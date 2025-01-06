@@ -20,7 +20,7 @@ const { employment_history } = employment && employment.data;
   <!-- hero -->
   <section class="py-2 lg:pt-10 lg:pb-5">
     <div class="container mx-auto lg:w-3/4 xl:w-1/2">
-      <div class="row animate-fade-in">
+      <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         <section>
           <BizCard card_data={hero} />
         </section>
@@ -29,8 +29,8 @@ const { employment_history } = employment && employment.data;
   </section>
 
   <!-- summary -->
-  <section class="py-5 animate-fade-in">
-    <div class="container">
+  <section class="py-5">
+    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
         <section>
           <h2 class="section-title">
@@ -47,8 +47,8 @@ const { employment_history } = employment && employment.data;
 
   <!-- work_exp -->
   <section class="py-5">
-    <div class="container">
-      <div class="row animate-fade-in">
+    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class="row">
         <section>
           <h2 class="section-title">
             <FeatherIcon name='briefcase' size={26} className="mr-2" client:load />
@@ -63,8 +63,8 @@ const { employment_history } = employment && employment.data;
   </section>
 
   <section class="py-5">
-    <div class="container">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 animate-fade-in">
+    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <!-- education -->
         <section>
           <h2 class="section-title text-3xl">
@@ -92,10 +92,8 @@ const { employment_history } = employment && employment.data;
 
   <!-- skills -->
   <section class="py-5">
-    <div 
-      class="container"
-    >
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 animate-fade-in">
+    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <section>
           <h2 class="section-title text-3xl">
             <FeatherIcon name='barChart' size={26} className="mr-2" client:load />
