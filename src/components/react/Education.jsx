@@ -1,41 +1,41 @@
 const Education = ({ education_data }) => {
-  const { school, start_year, end_year, location, degree, concentration } = education_data;
+  const { school, logo, start_year, end_year, location, degree, concentration } = education_data;
   return (
-    <ul className="education-info">
-      <li>
-        {(school && location) && (
-          <div className="flex items-center">
-            <h3 className="text-lg font-black">{school}</h3><span className="font-bold pl-1">{`- ${location}`}</span>
+    <div className="card bg-base-200 dark:bg-neutral-content dark:text-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+      {logo && (
+        <figure className="px-6 pt-6">
+          <img src={logo} alt={school} className="max-w-40" loading="lazy" />
+        </figure>
+      )}
+      <div className="card-body block text-center p-6">
+        {school && (<h3 className="text-lg font-black mb-0">{school}</h3>)}
+        {location && (
+          <div className="block">
+            <p className="text-md font-bold pl-1">{location}</p>
           </div>
         )}
-        {(start_year && end_year) && (
-            <li>
-              <span className="text-lg font-bold">{`${start_year} - ${end_year}`}</span>
-            </li>
+        {(start_year && end_year) && (<span className="text-lg font-bold">{`${start_year} - ${end_year}`}</span>)}
+        {degree && (
+          <div>
+            <span className="text-sm font-bold">Degree: </span>
+            <span>{degree}</span>
+          </div>
         )}
-        <ul>
-          {degree && (
-            <li>
-              <span className="text-sm font-bold">Degree: </span>
-              <span>{degree}</span>
-            </li>
-          )}
-          {(concentration && concentration.length > 0) && (
-            <li>
-              <span className="text-sm font-bold">Concentration(s): </span>
-              {concentration.map((major, i) => {
-                return (
-                  <>
-                    <span key={i}>{major}</span>
-                    {i < concentration.length - 1 && (<span>, </span>)}
-                  </>
-                )
-              })}
-            </li>
-          )}
-        </ul>
-      </li>
-    </ul>
+        {(concentration && concentration.length > 0) && (
+          <div>
+            <span className="text-sm font-bold">Concentration(s): </span>
+            {concentration.map((major, i) => {
+              return (
+                <>
+                  <span key={i}>{major}</span>
+                  {i < concentration.length - 1 && (<span>, </span>)}
+                </>
+              )
+            })}
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

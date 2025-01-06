@@ -4,19 +4,16 @@ import BizCard from "@/components/BizCard.astro"
 import WorkExp from "@/components/react/WorkExp"
 import Education from "@/components/react/Education"
 import Certifications from "@/components/react/Certifications"
-import Features from "@/components/Features.astro";
-import Testimonial from "@/components/Testimonial.astro";
+import Skills from "@/components/react/Skills"
 import FeatherIcon from "@/components/react/FeatherIcon";
 import Base from "@/layouts/Base.astro";
-import Cta from "@/layouts/partials/Cta.astro";
 import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const homepage = await getEntry("homepage", "index");
-const { hero, summary, education, certifications, sections, features, testimonial } = homepage && homepage.data;
+const { hero, summary, education, certifications, skills } = homepage && homepage.data;
 const employment = await getEntry('workExp', 'index');
 const { employment_history } = employment && employment.data;
-const call_to_action = homepage && homepage.data.call_to_action;
 ---
 
 <Base>
@@ -32,15 +29,15 @@ const call_to_action = homepage && homepage.data.call_to_action;
   </section>
 
   <!-- summary -->
-  <section class="py-5 bg-neutral-content shadow-md animate-fade-in">
-    <div class="container !bg-transparent dark:text-neutral">
+  <section class="py-5 animate-fade-in">
+    <div class="container">
       <div class="row">
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title">
             <FeatherIcon name='thumbsUp' size={26} className="mr-2" client:load />
             About Me
           </h2>
-          <div class="px-5">
+          <div class="bg-neutral text-neutral-content shadow-lg rounded-2xl p-[30px]">
             <p set:html={markdownify(summary)} />
           </div>
         </section>
@@ -53,11 +50,11 @@ const call_to_action = homepage && homepage.data.call_to_action;
     <div class="container">
       <div class="row animate-fade-in">
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title">
             <FeatherIcon name='briefcase' size={26} className="mr-2" client:load />
             Work Experience
           </h2>
-          <div class="px-5">
+          <div class="md:px-5">
             <WorkExp employment_history={employment_history} />
           </div>
         </section>
@@ -70,22 +67,22 @@ const call_to_action = homepage && homepage.data.call_to_action;
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 animate-fade-in">
         <!-- education -->
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title text-3xl">
             <FeatherIcon name='penTool' size={26} className="mr-2" client:load />
             Education
           </h2>
-          <div class="px-5">
+          <div class="md:px-5">
             <Education education_data={education} />
           </div>
         </section>
 
         <!-- certifications -->
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title text-3xl">
             <FeatherIcon name='star' size={26} className="mr-2" client:load />
             Certifications
           </h2>
-          <div class="px-5">
+          <div class="md:px-5">
             <Certifications cert_data={certifications} />
           </div>
         </section>
@@ -100,42 +97,24 @@ const call_to_action = homepage && homepage.data.call_to_action;
     >
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 animate-fade-in">
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title text-3xl">
             <FeatherIcon name='barChart' size={26} className="mr-2" client:load />
             Hard Skills
           </h2>
-          <div class="px-5">
-            <p set:html={markdownify(summary)} />
+          <div class="md:px-5">
+            <Skills skills={skills.hard_skills} />
           </div>
         </section>
         <section>
-          <h2 class="flex items-center mb-3">
+          <h2 class="section-title text-3xl">
             <FeatherIcon name='barChart2' size={26} className="mr-2" client:load />
             Soft Skills
           </h2>
-          <div class="px-5">
-            <p set:html={markdownify(summary)} />
+          <div class="md:px-5">
+            <Skills skills={skills.soft_skills} />
           </div>
         </section>
       </div>
     </div>
   </section>
-
-  <!-- multi section -->
-  {
-    sections && (
-      <section class="multi-section">
-        {sections.map((section) => (
-          <Section section={section} />
-        ))}
-      </section>
-    )
-  }
-  <!-- key features -->
-  <Features features={features} />
-  <!-- testimonial -->
-  <Testimonial testimonial={testimonial} />
-  <!-- call to action -->
-  <Cta {...call_to_action} />
-  <!-- <Content /> -->
 </Base>

@@ -1,5 +1,5 @@
-import type { Testimonial } from "@/components/Testimonial.astro";
-import type { LinkButton, PageType } from "@/content/page.types";
+// import type { Testimonial } from "@/components/Testimonial.astro";
+import type { PageType } from "@/content/page.types";
 import { defineCollection, z } from "astro:content";
 import { glob } from 'astro/loaders';
 
@@ -28,29 +28,37 @@ const indexPage = defineCollection({
       summary: z.string(),
       education: z.object({
         school: z.string(),
+        logo: z.string(),
         start_year: z.string(),
         end_year: z.string(),
         location: z.string(),
         degree: z.string(),
         concentration: z.array(z.string()),
       }),
-      features: z.object({
-        title: z.string(),
-        description: z.string(),
-        feature_list: z.array(
+      certifications: z.array(
+        z.object({
+          name: z.string(),
+          issue_date: z.string(),
+          logo: z.string(),
+          url: z.string(),
+        }),
+      ),
+      skills:z.object({
+        hard_skills: z.array(
           z.object({
-            title: z.string(),
-            content: z.string(),
-            icon: z.string(),
+            name: z.string(),
+            logo: z.string(),
+            level: z.string(),
+          })
+        ),
+        soft_skills: z.array(
+          z.object({
+            name: z.string(),
+            logo: z.string()
           }),
         ),
       }),
-      testimonial: z.custom<Testimonial>(),
-      call_to_action: z.object({
-        title: z.string(),
-        description: z.string(),
-        button: z.custom<LinkButton>(),
-      }),
+      // testimonial: z.custom<Testimonial>(),
     }),
     zodPageConfig,
   )
