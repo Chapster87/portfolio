@@ -90,16 +90,18 @@ const projectsPage = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projects" }),
   schema: z.intersection(
     z.object({
-      projects_grid: z.object({
-        project_list: z.array(
+      project_collection: z.object({
+        projects: z.array(
           z.object({
-            image: z.string(),
-            icon: z.string(),
+            image_thumb: z.string(),
+            image_preview: z.string(),
             title: z.string(),
             company: z.string(),
+            platform: z.string(),
             start_date: z.string(),
             end_date: z.string(),
-            desc: z.string(),
+            short_desc: z.string(),
+            long_desc: z.string(),
             url: z.string()
           }),
         )

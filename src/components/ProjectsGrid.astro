@@ -1,8 +1,8 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import ProjectTile from "./react/ProjectTile";
-const { projects } = Astro.props;
-const { title, description, project_list } = projects;
+const { project_collection } = Astro.props;
+const { title, description, projects } = project_collection;
 ---
 
 <section class="section key-feature relative">
@@ -15,6 +15,6 @@ const { title, description, project_list } = projects;
         <p set:html={markdownify(description)} />
       </div>
     </div>
-    <ProjectTile project_list={project_list} client:load />
+    <ProjectTile projects={projects} client:load />
   </div>
 </section>

@@ -2,22 +2,18 @@
 import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
 import ProjectsGrid from "@/components/ProjectsGrid.astro";
-import { getEntry, render } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 const projects = await getEntry("projects", "index");
-const { projects_grid } = projects && projects.data;
-const { Content } = projects && await render(projects);
+const { project_collection } = projects && projects.data;
 ---
 
 <Base>
-  <section class="py-16">
+  <section class="py-16 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <div class="container">
       <PageHeader page_data={projects.data} />
     </div>
     <!-- projects -->
-    <ProjectsGrid projects={projects_grid} />
-    <div class="container">
-      <Content />
-    </div>
+    <ProjectsGrid project_collection={project_collection} />
   </section>
 </Base>
