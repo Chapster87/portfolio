@@ -20,6 +20,13 @@
   @apply mx-auto max-w-[1248px] px-4;
 }
 
+.collapse-title {
+  &:after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 // social icon style
 .social-icons {
   li {
@@ -133,21 +140,6 @@
     @apply text-sm hover:text-primary hover:underline;
   }
 }
-
-.tile-grid {
-  p {
-    @apply mt-3 text-sm md:text-base break-all;
-  }
-
-  .icon {
-    @apply h-6 w-6;
-
-    svg {
-      @apply text-secondary;
-    }
-  }
-}
-
 
 //changelogs
 .changelogs {

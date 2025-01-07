@@ -26,11 +26,11 @@ const WorkExp = ({ employment_history }) => {
                   </svg>
                 </div>
                 <div className={`timeline-end pl-2${i < (employment_history.length - 1) ? ' !mb-2' : ''}`}>
-                  <div className="employer flex" >
+                  <div className="employer flex flex-col md:flex-row" >
                     { employer && ( <div className="text-lg font-black text-primary" dangerouslySetInnerHTML={{__html: markdownify(employer)}}></div> )}
                     { location && (
-                      <div className="flex items-center">
-                        <span className="text-gray-400 px-2">-</span>
+                      <div className="flex items-center mt-1 md:mt-0">
+                        <span className="text-gray-400 px-2 hidden md:inline">-</span>
                         <MapPin className="text-gray-400 pr-1" />
                         {location}
                         { remote && (<span className="pl-1">(Remote)</span>)}
@@ -41,11 +41,11 @@ const WorkExp = ({ employment_history }) => {
                     positions.map((position, i) => {
                       const { title, start_date, end_date, notes } = position;
                       return ( 
-                        <div key={i} className={`employment-position p-2${i < (positions.length - 1) ? ' mb-2' : ''}`}>
-                          <div className="flex items-center">
+                        <div key={i} className={`employment-position py-2 md:p-2${i < (positions.length - 1) ? ' mb-2' : ''}`}>
+                          <div className="flex flex-col md:flex-row md:items-center">
                             { title && ( <div className="text-lg font-black italic">{title}</div> )}
                             { ( start_date || end_date ) && (
-                              <div className="badge badge-md badge-neutral ml-3">
+                              <div className="badge badge-md badge-neutral p-3 mt-2 md:mt-0 md:ml-3">
                                 <Calendar className="pr-2"/>
                                 <time className="">
                                   { start_date && ( start_date ) }{ end_date && ( ` - ${end_date}`) }
@@ -54,7 +54,7 @@ const WorkExp = ({ employment_history }) => {
                             )}
                           </div>
                           {(notes && notes.length > 0) && (
-                            <ul className="list-disc ml-4">
+                            <ul className="list-disc mt-3 md:mt-0 ml-4">
                               {notes.map((note, i) => (
                                 <li key={i}>{note}</li>
                               ))}

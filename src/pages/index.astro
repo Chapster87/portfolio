@@ -46,15 +46,16 @@ const { employment_history } = employment && employment.data;
   </section>
 
   <!-- work_exp -->
-  <section class="py-5">
+  <section class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
-        <section>
-          <h2 class="section-title">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" />
+          <h2 class="collapse-title section-title">
             <FeatherIcon name='briefcase' size={26} className="mr-2" client:load />
             Work Experience
           </h2>
-          <div class="md:px-5">
+          <div class="collapse-content md:px-5">
             <WorkExp employment_history={employment_history} />
           </div>
         </section>
@@ -62,27 +63,29 @@ const { employment_history } = employment && employment.data;
     </div>
   </section>
 
-  <section class="py-5">
+  <section class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <!-- education -->
-        <section>
-          <h2 class="section-title text-3xl">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" />
+          <h2 class="collapse-title section-title">
             <FeatherIcon name='penTool' size={26} className="mr-2" client:load />
             Education
           </h2>
-          <div class="md:px-5">
+          <div class="collapse-content md:px-5">
             <Education education_data={education} />
           </div>
         </section>
 
         <!-- certifications -->
-        <section>
-          <h2 class="section-title text-3xl">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" />
+          <h2 class="collapse-title section-title">
             <FeatherIcon name='star' size={26} className="mr-2" client:load />
             Certifications
           </h2>
-          <div class="md:px-5">
+          <div class="collapse-content md:px-5">
             <Certifications cert_data={certifications} />
           </div>
         </section>
@@ -91,24 +94,26 @@ const { employment_history } = employment && employment.data;
   </section>
 
   <!-- skills -->
-  <section class="py-5">
+  <section class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <section>
-          <h2 class="section-title text-3xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" />
+          <h2 class="collapse-title section-title">
             <FeatherIcon name='barChart' size={26} className="mr-2" client:load />
             Hard Skills
           </h2>
-          <div class="md:px-5">
+          <div class="collapse-content md:px-5">
             <Skills skills={skills.hard_skills} />
           </div>
         </section>
-        <section>
-          <h2 class="section-title text-3xl">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" />
+          <h2 class="collapse-title section-title">
             <FeatherIcon name='barChart2' size={26} className="mr-2" client:load />
             Soft Skills
           </h2>
-          <div class="md:px-5">
+          <div class="collapse-content md:px-5">
             <Skills skills={skills.soft_skills} />
           </div>
         </section>
