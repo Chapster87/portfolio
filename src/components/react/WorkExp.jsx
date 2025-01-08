@@ -54,7 +54,7 @@ const WorkExp = ({ employment_history }) => {
                             )}
                           </div>
                           {(notes && notes.length > 0) && (
-                            <ul className="list-disc mt-3 md:mt-0 ml-4">
+                            <ul className="mt-3 md:mt-2">
                               {notes.map((note, i) => (
                                 <li key={i}>{note}</li>
                               ))}

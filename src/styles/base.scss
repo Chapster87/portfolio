@@ -46,3 +46,11 @@ p {
 pre {
   @apply rounded p-4
 }
+
+ul {
+  @apply list-disc ml-4;
+  li {
+    @apply leading-5 mb-1.5;
+  }
+}
+

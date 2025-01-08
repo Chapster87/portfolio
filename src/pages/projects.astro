@@ -2,7 +2,7 @@
 import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
 import ProjectsGrid from "@/components/ProjectsGrid.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
 const projects = await getEntry("projects", "index");
 const { project_collection } = projects && projects.data;
