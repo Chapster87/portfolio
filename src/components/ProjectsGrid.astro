@@ -1,8 +1,12 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import ProjectTile from "./react/ProjectTile";
+import { getCollection } from "astro:content";
+
 const { project_collection } = Astro.props;
 const { title, description, projects } = project_collection;
+
+const projectsContent = await getCollection("projectsContent");
 ---
 
 <section class="section key-feature relative">
@@ -15,6 +19,6 @@ const { title, description, projects } = project_collection;
         <p set:html={markdownify(description)} />
       </div>
     </div>
-    <ProjectTile projects={projects} client:load />
+    <ProjectTile projects={projects} projectsContent={projectsContent} client:load />
   </div>
 </section>

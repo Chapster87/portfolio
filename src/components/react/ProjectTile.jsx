@@ -3,19 +3,17 @@ import { humanize } from "@/lib/utils/textConverter";
 import * as Icon from "react-feather";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const ProjectTile = ({ projects }) => {
-
+const ProjectTile = ({ projects, projectsContent }) => {
   return (
     <div className="tile-grid mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((item, i) => {
-        const { image_thumb, image_preview, title, company, platform, start_date, end_date, short_desc, long_desc, url } = item;
-        const FeatherIcon = Icon[humanize(item.icon)];
+        const { image_thumb, title, company, platform, start_date, end_date, short_desc, content_id, url } = item;
+        const content = projectsContent.find((content) => content.id === content_id);
         return (
           <>
             <div key={i} className="card card-compact bg-base-100 border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              <div className="card-top p-7 pb-4">
-
-                {long_desc ? (
+              <div className="card-top p-7 pb-4"> 
+                {(content && content.body) ? (
                   <button onClick={()=>document.getElementById(`project_modal_${i}`).showModal()}>
                     {title && (<h2 className="card-title !text-xl font-bold !mb-0">{title}</h2>)}
                   </button>
@@ -25,7 +23,7 @@ const ProjectTile = ({ projects }) => {
               </div>
               {image_thumb && (
                 <figure className="px-7">
-                  {long_desc ? (
+                  {(content && content.body) ? (
                     <button className="border-2 border-neutral" onClick={()=>document.getElementById(`project_modal_${i}`).showModal()}>
                       <img src={image_thumb} alt={`${title} Screenshot`} />
                     </button>
@@ -50,11 +48,11 @@ const ProjectTile = ({ projects }) => {
                   <span>{company}</span>
                 </div>)}
                 {platform &&(
-                  <div class="badge badge-secondary mt-1">{platform}</div>
+                  <div className="badge badge-secondary mt-1">{platform}</div>
                 )}
                 {short_desc && (<div className="py-3" dangerouslySetInnerHTML={{__html: markdownify(short_desc)}}></div>)}
                 <div className="card-actions justify-center">
-                  {long_desc && (
+                  {(content && content.body) && (
                     <button className="btn btn-primary btn-wide" onClick={()=>document.getElementById(`project_modal_${i}`).showModal()}>Read More</button>
                   )}
                 </div>
@@ -66,10 +64,10 @@ const ProjectTile = ({ projects }) => {
                   <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
                 <div className="modal-body mt-6">
-                  {image_preview && (
+                  {(content && content.data && content.data.hero_image) && (
                     <figure className="pb-4">
                       <a href={url} className="card-image" target="_blank">
-                        <img src={image_preview} alt={`${title} Screenshot`} />
+                        <img src={content.data.hero_image} alt={`${title} Screenshot`} />
                       </a>
                     </figure>
                   )}
@@ -78,7 +76,9 @@ const ProjectTile = ({ projects }) => {
                     {url && (<span className="text-2xl ml-4 mr-4">|</span>)}
                     {url && (<a className="link link-secondary text-2xl" href={url}>View Site</a>)}
                   </div>
-                  <div className="long-desc" dangerouslySetInnerHTML={{__html: markdownify(long_desc)}}></div>
+                  {(content && content.body) && (
+                    <div className="long-desc" dangerouslySetInnerHTML={{__html: markdownify(content.body)}}></div>
+                  )}
                 </div>
               </div>
               <form method="dialog" className="modal-backdrop">

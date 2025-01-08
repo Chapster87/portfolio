@@ -94,14 +94,13 @@ const projectsPage = defineCollection({
         projects: z.array(
           z.object({
             image_thumb: z.string(),
-            image_preview: z.string(),
             title: z.string(),
             company: z.string(),
             platform: z.string(),
             start_date: z.string(),
             end_date: z.string(),
             short_desc: z.string(),
-            long_desc: z.string(),
+            content_id: z.string(),
             url: z.string()
           }),
         )
@@ -111,12 +110,17 @@ const projectsPage = defineCollection({
   )
 });
 
+const projectsContent = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projectsContent" }),
+});
+
 // Export collections
 export const collections = {
   pages: pagesCollection,
   homepage: indexPage,
   workExp: workExpData,
   projects: projectsPage,
+  projectsContent: projectsContent
 };
 
 
