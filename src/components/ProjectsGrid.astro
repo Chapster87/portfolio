@@ -4,21 +4,42 @@ import ProjectTile from "./react/ProjectTile";
 import { getCollection } from "astro:content";
 
 const { project_collection } = Astro.props;
-const { title, description, projects } = project_collection;
+const { work_projects, freelance_projects, other_projects } = project_collection;
 
 const projectsContent = await getCollection("projectsContent");
 ---
 
-<section class="section key-feature relative">
-  <div class="container">
-    <div class="row justify-between text-center lg:text-start ">
-      <div class="lg:col-7">
-        <h1 set:html={markdownify(title)} />
-      </div>
-      <div class="mt-6 lg:col-5 lg:mt-0">
-        <p set:html={markdownify(description)} />
-      </div>
-    </div>
-    <ProjectTile projects={projects} projectsContent={projectsContent} client:load />
+<div class="container">
+  <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <section class="py-6">
+      <a href="#work-projects" class="link">Employer Projects</a>
+      <a href="#freelance-projects" class="link">Freelance Projects</a>
+      <a href="#other-projects" class="link">Other Projects</a>
+    </section>
   </div>
-</section>
+  <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <section class="py-6" id="work-projects">
+      <h2 class="section-title">Employer Projects</h2>
+      <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
+        <ProjectTile project={work_projects} projectsContent={projectsContent} client:load />
+      </div>
+    </section>
+  </div>
+  <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <section class="py-6" id="freelance-projects">
+      <h2 class="section-title">Freelance Projects</h2>
+      <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
+        <ProjectTile project={freelance_projects} projectsContent={projectsContent} client:load />
+      </div>
+    </section>
+  </div>
+  <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <section class="py-6" id="other-projects">
+      <h2 class="section-title">Other Projects</h2>
+      <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
+        <ProjectTile project={other_projects} projectsContent={projectsContent} client:load />
+      </div>
+    </section>
+  </div>
+</div>
+
