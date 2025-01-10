@@ -10,26 +10,24 @@ import Base from "@/layouts/Base.astro";
 import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const homepage = await getEntry("homepage", "index");
+const homepage = await getEntry('homepage', 'index');
 const { hero, summary, education, certifications, skills } = homepage && homepage.data;
 const employment = await getEntry('workExp', 'index');
 const { employment_history } = employment && employment.data;
 ---
 
-<Base>
+<Base entry_keys={['homepage', 'index']}>
   <!-- hero -->
-  <section class="py-2 lg:pt-10 lg:pb-5">
+  <div class="py-2 lg:pt-10 lg:pb-5">
     <div class="container mx-auto lg:w-3/4 xl:w-1/2">
       <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-        <section>
-          <BizCard card_data={hero} />
-        </section>
+        <BizCard card_data={hero} />
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- summary -->
-  <section class="py-5">
+  <div class="py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
         <section>
@@ -43,10 +41,10 @@ const { employment_history } = employment && employment.data;
         </section>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- work_exp -->
-  <section class="py-1 sm:py-5">
+  <div class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
@@ -61,9 +59,9 @@ const { employment_history } = employment && employment.data;
         </section>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="py-1 sm:py-5">
+  <div class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <!-- education -->
@@ -91,10 +89,10 @@ const { employment_history } = employment && employment.data;
         </section>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- skills -->
-  <section class="py-1 sm:py-5">
+  <div class="py-1 sm:py-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
@@ -119,5 +117,5 @@ const { employment_history } = employment && employment.data;
         </section>
       </div>
     </div>
-  </section>
+  </div>
 </Base>

@@ -93,41 +93,17 @@ const projectsPage = defineCollection({
       project_collection: z.object({
         work_projects: z.array(
           z.object({
-            image_thumb: z.string(),
-            title: z.string(),
-            company: z.string(),
-            platform: z.string(),
-            start_date: z.string(),
-            end_date: z.string(),
-            short_desc: z.string(),
             content_id: z.string(),
-            url: z.string()
           }),
         ),
         freelance_projects: z.array(
           z.object({
-            image_thumb: z.string(),
-            title: z.string(),
-            company: z.string(),
-            platform: z.string(),
-            start_date: z.string(),
-            end_date: z.string(),
-            short_desc: z.string(),
             content_id: z.string(),
-            url: z.string()
           }),
         ),
         other_projects: z.array(
           z.object({
-            image_thumb: z.string(),
-            title: z.string(),
-            company: z.string(),
-            platform: z.string(),
-            start_date: z.string(),
-            end_date: z.string(),
-            short_desc: z.string(),
             content_id: z.string(),
-            url: z.string()
           }),
         )
       })

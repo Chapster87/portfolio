@@ -2,5 +2,20 @@
     "somesass.css.customData": [
         ".vscode/tailwind.json"
     ],
-    "scss.lint.unknownAtRules": "ignore"
+    "scss.lint.unknownAtRules": "ignore",
+    "cSpell.words": [
+        "achapman",
+        "Belkin",
+        "gtag",
+        "Linksys",
+        "markdownify",
+        "Merkle",
+        "plainify",
+        "SFCC",
+        "SFRA",
+        "TMDB",
+        "Traeger",
+        "usmint",
+        "Wayback"
+    ]
 }

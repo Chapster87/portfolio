@@ -3,7 +3,7 @@ import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
 import { getEntry, render } from "astro:content";
 
-const about = await getEntry("pages", "changelog");
+const about = await getEntry('pages', 'changelog');
 const page_data = {
   ...about.data,
   content: about.body,
@@ -11,7 +11,7 @@ const page_data = {
 const { Content } = about && await render(about);
 ---
 
-<Base>
+<Base entry_keys={['pages', 'changelog']}>
   <section class="py-16">
     <div class="container">
       <div class="mx-auto max-w-[768px] text-center">

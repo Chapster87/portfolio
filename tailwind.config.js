@@ -41,7 +41,14 @@ module.exports = {
       // Defined animations
       animation: {
         fade: 'fadeInUp 1s both',
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#000',
+          },
+        },
+      },
     },
   },
   plugins: [

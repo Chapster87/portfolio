@@ -1,5 +1,4 @@
 ---
-import { markdownify } from "@/lib/utils/textConverter";
 import ProjectTile from "./react/ProjectTile";
 import { getCollection } from "astro:content";
 
@@ -11,17 +10,22 @@ const projectsContent = await getCollection("projectsContent");
 
 <div class="container">
   <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-    <section class="py-6">
-      <a href="#work-projects" class="link">Employer Projects</a>
-      <a href="#freelance-projects" class="link">Freelance Projects</a>
-      <a href="#other-projects" class="link">Other Projects</a>
+    <section class="py-6 flex flex-col sm:flex-row justify-center items-center">
+      <a href="#work-projects" class="link link-primary font-bold text-xl py-2 sm:py-0 px-5">Employer Projects</a>
+      <a href="#freelance-projects" class="link link-secondary font-bold text-xl py-2 sm:py-0 px-5">Freelance Projects</a>
+      <a href="#other-projects" class="link link-accent font-bold text-xl py-2 sm:py-0 px-5">Other Projects</a>
     </section>
   </div>
   <div class="row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <section class="py-6" id="work-projects">
       <h2 class="section-title">Employer Projects</h2>
       <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
-        <ProjectTile project={work_projects} projectsContent={projectsContent} client:load />
+        {work_projects.map((item) => {
+          const content = projectsContent.find((content) => content.id === item.content_id);
+          return (
+            <ProjectTile content={content} client:load />
+          );
+        })}
       </div>
     </section>
   </div>
@@ -29,7 +33,12 @@ const projectsContent = await getCollection("projectsContent");
     <section class="py-6" id="freelance-projects">
       <h2 class="section-title">Freelance Projects</h2>
       <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
-        <ProjectTile project={freelance_projects} projectsContent={projectsContent} client:load />
+        {freelance_projects.map((item) => {
+          const content = projectsContent.find((content) => content.id === item.content_id);
+          return (
+            <ProjectTile content={content} client:load />
+          );
+        })}
       </div>
     </section>
   </div>
@@ -37,7 +46,12 @@ const projectsContent = await getCollection("projectsContent");
     <section class="py-6" id="other-projects">
       <h2 class="section-title">Other Projects</h2>
       <div class="tile-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:px-5">
-        <ProjectTile project={other_projects} projectsContent={projectsContent} client:load />
+        {other_projects.map((item) => {
+          const content = projectsContent.find((content) => content.id === item.content_id);
+          return (
+            <ProjectTile content={content} client:load />
+          );
+        })}
       </div>
     </section>
   </div>

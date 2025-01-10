@@ -1,0 +1,55 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const { projectId } = Astro.params;
+const projectsContent2 = await getCollection("projectsContent");
+
+export async function getStaticPaths() {
+  const projectsContent = await getCollection("projectsContent");
+
+  return projectsContent.map((project) => {
+    return {
+      params: { projectId: project.id },
+      props: { project },
+    };
+  });
+}
+
+const { project } = Astro.props;
+const { data, body } = project;
+const { title, url, company, platform, image_hero } = data;
+---
+
+<Base entry_keys={['projectsContent', projectId]}>
+  <div class="main">
+    <section>
+      {image_hero && (
+        <figure class="flex justify-center mb-4 bg-base-200">
+            <img src={data.image_hero} alt="" />
+        </figure>
+      )}
+    </section>
+    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class="flex flex-row items-center mb-4">
+        <h1 class="leading-none mb-0">{title}</h1>
+        {platform && (
+          <div class="badge badge-lg badge-secondary mx-5">{platform}</div>
+        )}
+      </div>
+      <div class="flex flex-row items-center p-0 py-2 border-y-2 border-base-300 dark:border-base-content mb-5">
+        <a href={url} class="link link-secondary ml-5 mr-3">View Website</a>
+        {company && (
+          <div class="text-md mx-3">
+            <span class="font-bold">Employer: </span>
+            <span>{company}</span>
+          </div>
+        )}
+      </div>
+      <div class="row">
+        <div set:html={markdownify(body)}/>
+      </div>
+    </div>
+  </div>
+</Base>

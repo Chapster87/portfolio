@@ -4,11 +4,11 @@ import Base from "@/layouts/Base.astro";
 import ProjectsGrid from "@/components/ProjectsGrid.astro";
 import { getEntry } from "astro:content";
 
-const projects = await getEntry("projects", "index");
+const projects = await getEntry('projects', 'index');
 const { project_collection } = projects && projects.data;
 ---
 
-<Base>
+<Base entry_keys={['projects', 'index']}>
   <section class="py-16 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <div class="container">
       <PageHeader page_data={projects.data} />

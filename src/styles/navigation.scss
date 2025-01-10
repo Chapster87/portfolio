@@ -1,3 +1,11 @@
+#nav-menu {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  [data-theme='business'] & {
+    background-color: oklch(var(--b1)/0.4);
+  }
+}
+
 // navbar toggler
 input#nav-toggle:checked ~ label#show-button {
   @apply hidden;
