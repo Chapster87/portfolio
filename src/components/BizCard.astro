@@ -12,7 +12,7 @@ const { name, title, image, action_urls } = card_data;
   <div class="row">
     <div class="col sm:col-auto flex justify-center mb-4 sm:mb-0 pr-2">
       <Image
-        class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-primary dark:ring-surface"
+        class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface"
         alt="Andy Chapman, headshot"
         src={image}
         width={144}
@@ -22,7 +22,7 @@ const { name, title, image, action_urls } = card_data;
     </div>
     <div class="col pl-2">
       <h2 set:html={markdownify(name)}/>
-      <p class="text-primary" set:html={markdownify(title)}/>
+      <p class="text-secondary" set:html={markdownify(title)}/>
       <div class="row hidden sm:flex mt-3">
         <BizCardActions action_urls={action_urls} />
       </div>

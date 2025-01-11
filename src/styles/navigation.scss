@@ -25,7 +25,7 @@ input#nav-toggle:checked ~ #nav-menu {
   animation: reduce-header linear both;
   animation-timeline: scroll();
   animation-range: 0 150px;
-  @apply sticky top-0 z-50 transition-all duration-300 py-6;
+  @apply sticky top-0 z-50 transition-all duration-300 py-2 lg:py-6;
 }
 
 .dark .header {

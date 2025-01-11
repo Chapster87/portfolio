@@ -43,7 +43,7 @@ const { linkedin_url, github_url, email, resume_url } = action_urls;
   </div>
 )}
 {resume_url && (
-  <div class="col sm:pl-3 mb-3 sm:mb-8">
-    <a href={resume_url} target="_blank" class="btn btn-primary w-full">Download Resume <FeatherIcon name='download' size={20} client:load /></a>
+  <div class="col basis-full sm:basis-0 sm:pl-3 mb-3 sm:mb-8">
+    <a href={resume_url} target="_blank" class="btn btn-secondary w-full">Download Resume <FeatherIcon name='download' size={20} client:load /></a>
   </div>
 )}

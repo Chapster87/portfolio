@@ -2,7 +2,7 @@ const Certifications = ({ cert_data }) => {
   return (
     <>
       {(cert_data && cert_data.length > 0) && (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {cert_data.map((cert, i) => {
             const { name, issue_date, logo, url } = cert;
             return (
@@ -22,7 +22,7 @@ const Certifications = ({ cert_data }) => {
                   )}
                   {url && (
                     <div className="card-actions">
-                      <a href={url} className="link link-secondary">View Cert</a>
+                      <a href={url} className="link link-primary">View Cert</a>
                     </div>
                   )}
                 </div>
