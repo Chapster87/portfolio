@@ -4,18 +4,32 @@ meta_description: ''
 meta_keywords: 'web development, work projects, portfolio'
 
 title: 'ASU Foundations'
-url: ''
+url: 'https://web.archive.org/web/20200226012446/https://www.asufoundation.org/world-initiatives/global-impact/'
 company: 'DEG Digital'
 platform: 'SFCC - SFRA'
 start_date: 'Nov 2018'
 end_date: 'Oct 2019'
 short_desc: ''
 image_hero: '' # add an image to'/src/assets/images/projects/{projectID}-website.webp'
-image_thumb: ''
+image_thumb: '/images/projects/build-a-bear-thumb.webp'
 ---
 
 <div class="prose max-w-full">
-  <p>First project as Frontend Lead.</p>
-  <p>Team handled full implementation of client defined styleguide, and frontend needs.</p>
-  <p>Able to modify the SFRA platform heavily to satisfy the needs of a donation only website. This included a one-page checkout experience, as well as the removal of the shipping step of the checkout flow. Step removal was done in a way that client would add back in easily should they move away from digital only "products" and want to ship rewards associated with donations.</p>
+  <p>Arizona State University's (ASU) Foundation website was my first as a Front-End Technical Lead. Rather than simply working through tickets, I was now involved in client-facing discovery, sprint planning, and task delegation.</p>
+  <p>To implement the site's theme, I starting by creating a custom "Style Guide" landing page. This became a tool/method I would use on almost every new website I built afterwards. The page included a representation of every UI element to be used on the website. Colors, Typography Styles, Forms Elements, Buttons, Modals, Etc. The benefit was 2-fold, it made it really easy to demo the theme for the client, but it also pulled all the elements into one place for easy development.</p>
+  <p>Instead of "selling" products like your standard commerce website, ASU uses SFRA to accept donations for various funds. Users can browse the website, find a fun that appeals to them, and then add the fund and a monetary denomination to the cart. To make this process smoth as possible, our team cusotmized product pages to display denomination buttons, acting like "variations" as well as a "Enter an Amount" input for custom amounts.</p>
+  <p>For checkout, ASU wanted to be able to gather all the customers information in a single-page experience, rather than the out-of-the-box method that jumps page to page as you step through the checkout. (Even if OOTB box SFRA is a faux-1-page checkout since the page "changes" are handled with ajax calls.) Working with guidance from the Lead BED, I heavily modified both the javascript & css that split the the checkout into "steps" and successfully handle all input from a single page.</p>
+  <p>Finally, since the site was gather donations only, the shipping step of checkout not required. Rather than remove it entirely, we put it behind a conditional that would look for an attribute on cart items that would allows the step to show or not. This allowed the client to, in the future, tag certain funds that they may want to send a thank you or "gift" to the user.</p>
+  <p class="text-lg font-bold">Notable customizations</p>
+  <ul>
+    <li>Style Guide Implemented</li>
+    <li>Checkout</li>
+      <ul>  
+        <li>Modified SFRA checkout flow to be a true 1-page checkout</li>
+        <li>Conditionalized shipping step from checkout for donation "orders"</li>
+          <ul>  
+            <li>Allowed customer flexibility to configure future donations to include "gifts" and request a shipping address</li>
+          </ul>
+      </ul>
+  </ul>
 </div>
