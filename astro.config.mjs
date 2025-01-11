@@ -24,6 +24,9 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
+  experimental: {
+    svg: true,
+  },
   integrations: [
     react(),
     sitemap(),

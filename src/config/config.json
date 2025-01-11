@@ -4,11 +4,7 @@
     "base_url": "https://achapman.dev",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/tbd.ico",
-    "logo": "/images/logo.svg",
-    "logo_width": "47",
-    "logo_height": "47",
-    "logo_text": "Andy Chapman"
+    "favicon": "/images/favicon.ico"
   },
 
   "params": {
@@ -17,7 +13,7 @@
     "location": "Pittsburgh, PA",
     "phone": "+1 (555) 555-5555",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2025 proudly crafted by [Andy Chapman](https://github.com/Chapster87)"
+    "copyright": "Copyright © 2025 [Andy Chapman](https://github.com/Chapster87)"
 },
 
   "metadata": {

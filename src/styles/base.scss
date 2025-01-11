@@ -9,20 +9,8 @@ body {
   background-color: transparent;
   background-image: url("/images/asfalt-dark.png");
 
-  [data-theme='business'] & {
-    // @apply bg-slate-950 bg-[url(/images/bg.svg)] bg-cover bg-repeat;
-    // background-color: #000;
-  }
+  [data-theme='business'] & {}
 }
-
-.container {
-  background-color: rgba(255, 255, 255, 0.4);
-
-  [data-theme='business'] & {
-    background-color: oklch(var(--b1)/0.4);
-  }
-}
-
 
 h1 {
   @apply font-primary font-bold text-4xl lg:text-5xl
