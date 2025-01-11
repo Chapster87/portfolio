@@ -30,11 +30,12 @@ const websiteImage = await importImage();
 
 const { project } = Astro.props;
 const { data, body } = project;
-const { title, url, company, platform } = data;
+const { title, url, company, platform, start_date, end_date } = data;
 ---
 
 <Base entry_keys={['projectsContent', projectId]}>
   <section class="main">
+    <a href="/projects" class="link link-primary">Back to Projects</a>
     {(websiteImage && websiteImage.default) && (
       <div class="website-hero">
         <figure class="flex justify-center mb-4 bg-base-200">
@@ -43,18 +44,41 @@ const { title, url, company, platform } = data;
       </div>
     )}
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-      <div class="flex flex-row items-center mb-4">
-        <h1 class="leading-none mb-0">{title}</h1>
-        {platform && (
-          <div class="badge badge-lg badge-primary text-white mx-5">{platform}</div>
+      <div class="flex flex-row items-end justify-between mb-4">
+        {title && (
+          url ? (
+            <a href={url}>
+              <h1 class="leading-none mb-0">{title}</h1>
+            </a>
+          ) : (
+            <h1 class="leading-none mb-0">{title}</h1>
+          )
+        )}
+        {url && (
+          <a href={url} class="link link-primary font-bold ml-5 mr-3">View Website</a>
         )}
       </div>
       <div class="flex flex-row items-center p-0 py-2 border-y-2 border-base-300 dark:border-base-content mb-5">
-        <a href={url} class="link link-primary ml-5 mr-3">View Website</a>
+        {(start_date || end_date) && (
+          <div class="text-md">
+            <span class="font-bold">Project Date: </span>
+            <span>
+              {start_date}
+              {(end_date && start_date) && (" - ")}
+              {end_date}
+            </span>
+          </div>
+        )}
         {company && (
-          <div class="text-md mx-3">
+          <div class="text-md mx-7">
             <span class="font-bold">Employer: </span>
             <span>{company}</span>
+          </div>
+        )}
+        {platform && (
+          <div class="text-md mx-3">
+            <span class="font-bold">Platform: </span>
+            <div class="badge badge-lg badge-primary text-white mx-2">{platform}</div>
           </div>
         )}
       </div>
