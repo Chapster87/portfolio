@@ -12,7 +12,7 @@ const { counter, className } = Astro.props;
       counter.map((item: any) => (
         <div class="col py-3 px-5 sm:p-5 text-center border-b sm:border-b-0 sm:border-r lg:py-0 last:border-none">
           <h3 class="flex items-center justify-center gap-1">
-            <span class="count" aria-valuenow={item.number}>
+            <span class="count" aria-valuenow="0" aria-valuemin="0" aria-valuemax={item.number}>
               0
             </span>
             <span
@@ -35,11 +35,12 @@ const { counter, className } = Astro.props;
     const speed = 900;
     counters.forEach((counter) => {
       const animate = () => {
-        const value = +counter.getAttribute("aria-valuenow");
         const data = +counter.innerText;
+        const value = +counter.getAttribute("aria-valuemax");
 
         const time = value / speed;
         if (data < value) {
+          counter.setAttribute("aria-valuenow", Math.ceil(data + time));
           counter.innerText = Math.ceil(data + time);
           setTimeout(animate, 1);
         } else {

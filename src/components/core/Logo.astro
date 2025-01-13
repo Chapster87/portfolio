@@ -3,7 +3,7 @@ const { showText } = Astro.props;
 import SiteLogo from "@/assets/images/logo.svg";
 ---
 
-<a href="/" class="navbar-brand flex flex-row items-center">
+<a href="/" class="navbar-brand flex flex-row items-center" aria-label="Go To Homepage">
   <SiteLogo />
   {showText != false && (
       <p class="hidden sm:block sm:text-3xl font-bold ml-2">Andy Chapman</p>
