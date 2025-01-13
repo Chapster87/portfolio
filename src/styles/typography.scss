@@ -1,3 +1,12 @@
+// container
+.prose {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  [data-theme='business'] & {
+    background-color: oklch(var(--b1)/0.4);
+  }
+}
+
 .section-title {
   @apply flex items-center p-0 pb-2 text-2xl sm:text-3xl border-b-2 border-base-300 dark:border-base-content mb-5;
 }

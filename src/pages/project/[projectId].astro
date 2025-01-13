@@ -34,20 +34,34 @@ const { title, url, company, platform, start_date, end_date } = data;
 ---
 
 <Base entry_keys={['projectsContent', projectId]}>
-  <section class="main">
-    <a href="/projects" class="link link-primary">Back to Projects</a>
+  <section class="main pb-10">
+    <div class="bg-base-200 p-3">
+      <div class="breadcrumbs container bg-base-200 text-sm">
+        <ul>
+          <li><a href="/" class="link">Home</a></li>
+          <li><a href="/projects" class="link">Projects</a></li>
+          <li class="font-bold">{title}</li>
+        </ul>
+      </div>
+    </div>
     {(websiteImage && websiteImage.default) && (
       <div class="website-hero">
         <figure class="flex justify-center mb-4 bg-base-200">
-          <Image src={websiteImage.default} alt={`${title} Website Preview`} />
+          {url ? (
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <Image src={websiteImage.default} alt={`${title} Website Preview`} />
+            </a>
+          ) : (
+            <Image src={websiteImage.default} alt={`${title} Website Preview`} />
+          )}
         </figure>
       </div>
     )}
-    <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <div class="container intersect-once intersect motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="flex flex-row items-end justify-between mb-4">
         {title && (
           url ? (
-            <a href={url}>
+            <a href={url} target="_blank" rel="noopener noreferrer nofollow">
               <h1 class="leading-none mb-0">{title}</h1>
             </a>
           ) : (
@@ -55,7 +69,7 @@ const { title, url, company, platform, start_date, end_date } = data;
           )
         )}
         {url && (
-          <a href={url} class="link link-primary font-bold ml-5 mr-3">View Website</a>
+          <a href={url} class="link link-primary font-bold ml-5 mr-3" target="_blank" rel="noopener noreferrer nofollow">View Website</a>
         )}
       </div>
       <div class="flex flex-row items-center p-0 py-2 border-y-2 border-base-300 dark:border-base-content mb-5">
@@ -82,9 +96,11 @@ const { title, url, company, platform, start_date, end_date } = data;
           </div>
         )}
       </div>
-      <div class="row">
+      <div class="row mb-8">
         <div set:html={markdownify(body)}/>
       </div>
+      <div class="row text-center">
+          <a href="/projects" class="link link-primary text-xl font-bold">Back to Projects</a>
     </div>
   </section>
 </Base>

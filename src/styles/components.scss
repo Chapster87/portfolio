@@ -64,12 +64,31 @@ svg[id="site_logo"] {
   }
 }
 
+.breadcrumbs {
+  // base styles inherited from DaisyUI
+  ul {
+    margin-left: 0;
+
+    li {
+      &:first-child {
+        @apply hidden sm:flex !important;
+      }
+
+      &:nth-of-type(2) {
+        &:before {
+          @apply hidden sm:block !important;
+        }
+      }
+    }
+  }
+}
+
 // social icon style
 .social-icons {
   li {
     @apply mr-2 inline-block;
     a {
-      @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-black dark:bg-white text-center transition-all duration-200 hover:bg-primary;
+      @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-black dark:bg-white text-center transition-all duration-200 hover:bg-secondary;
 
       svg {
         @apply m-auto h-11 fill-gray-100 dark:fill-gray-600 text-xl;
@@ -83,22 +102,6 @@ svg[id="site_logo"] {
         @apply fill-white;
       }
     }
-  }
-}
-
-
-//footer
-.footer {
-  h6 {
-    @apply mb-4 font-primary font-semibold lg:mb-8;
-  }
-
-  p {
-    @apply text-sm;
-  }
-
-  li > a {
-    @apply text-sm hover:text-primary hover:underline;
   }
 }
 
@@ -174,7 +177,7 @@ svg[id="site_logo"] {
   }
 
   li > a {
-    @apply text-sm hover:text-primary hover:underline;
+    @apply text-sm hover:text-secondary hover:underline;
   }
 }
 
