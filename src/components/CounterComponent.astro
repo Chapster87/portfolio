@@ -32,7 +32,7 @@ const { counter, className } = Astro.props;
   // astro:page-load event is fired when the page is loaded
   document.addEventListener("astro:page-load", () => {
     const counters = document.querySelectorAll(".count");
-    const speed = 500;
+    const speed = 900;
     counters.forEach((counter) => {
       const animate = () => {
         const value = +counter.getAttribute("aria-valuenow");
