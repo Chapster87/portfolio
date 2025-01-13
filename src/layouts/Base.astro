@@ -129,6 +129,14 @@ const _noindex =
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T22TBLGK');</script>
+    <!-- End Google Tag Manager -->
+    
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
@@ -174,17 +182,6 @@ const _noindex =
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src={"https://www.googletagmanager.com/gtag/js?id="+GTAG}></script>
-    <script type="text/javascript" define:vars={{GTAG}}>
-      // Pasamos la variable GTAG_ID al navegador como una variable global
-      window.GTAG_ID = GTAG;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', window.GTAG_ID);
-    </script>
 
     <!-- title -->
     <title>
@@ -286,6 +283,10 @@ const _noindex =
     </script>
   </head>
   <body class="transition-colors duration-500">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T22TBLGK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <TwSizeIndicator />
     <Header />
     <main id="main-content">
