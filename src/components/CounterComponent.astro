@@ -6,11 +6,11 @@ const { counter, className } = Astro.props;
 
 <div class={'counter ' + className}>
   <div
-    class="flex justify-center row mx-0 rounded-[20px] bg-neutral text-neutral-content px-10 shadow-lg lg:py-4"
+    class="flex flex-col sm:flex-row flex-wrap justify-center mx-0 rounded-[20px] bg-neutral text-neutral-content shadow-lg px-6 sm:px-10 sm:py-4"
   >
     {
       counter.map((item: any) => (
-        <div class="border-border col px-5 py-5 text-center lg:border-r lg:py-0 last:lg:border-none">
+        <div class="col py-3 px-5 sm:p-5 text-center border-b sm:border-b-0 sm:border-r lg:py-0 last:border-none">
           <h3 class="flex items-center justify-center gap-1">
             <span class="count" aria-valuenow={item.number}>
               0
