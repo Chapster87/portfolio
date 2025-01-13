@@ -14,8 +14,6 @@ import { getEntry } from "astro:content";
 import type { PageType } from "@/content/page.types";
 import type { ContentEntryMap } from "astro:content";
 
-const GTAG = import.meta.env.GTAG_ID
-
 // font families
 const pf = theme.fonts.font_family.primary;
 const sf = theme.fonts.font_family.secondary;
@@ -131,10 +129,15 @@ const _noindex =
   <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-T22TBLGK');</script>
+      new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      // @ts-expect-error: ts(2339): Property 'async' does not exist on type 'HTMLElement'.
+      j.async=true;
+      // @ts-expect-error: ts(2339): Property 'src' does not exist on type 'HTMLElement'.
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T22TBLGK');
+    </script>
     <!-- End Google Tag Manager -->
     
     <!-- favicon -->

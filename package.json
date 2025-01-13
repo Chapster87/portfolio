@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "build-bad": "astro build",
+    "build-nocheck": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier -w ."
