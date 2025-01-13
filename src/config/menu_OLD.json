@@ -1,0 +1,42 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Projects",
+      "url": "/projects"
+    },
+    {
+      "name": "Theme",
+      "url": "/theme"
+    },
+    {
+      "name": "Pages",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Changelog",
+          "url": "/changelog"
+        },
+        {
+          "name": "Does not exist",
+          "url": "/does-not-exist"
+        }
+      ]
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Changelog",
+      "url": "/changelog"
+    }
+  ]
+}

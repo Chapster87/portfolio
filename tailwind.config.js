@@ -45,7 +45,7 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: '#000',
+            color: "var(--bc)",
           },
         },
       },
@@ -88,7 +88,7 @@ module.exports = {
           primary: "#377cfb",
           secondary: "#00b140",
           accent:"#ea6947",
-          "--color-white": "#ffffff",
+          "--white": "100% 0 0",
           "--bc": "0% 0 0"
         },
       },

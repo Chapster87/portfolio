@@ -1,42 +1,23 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Resume",
       "url": "/"
     },
     {
       "name": "Projects",
       "url": "/projects"
-    },
-    {
-      "name": "Theme",
-      "url": "/theme"
-    },
-    {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Changelog",
-          "url": "/changelog"
-        },
-        {
-          "name": "Does not exist",
-          "url": "/does-not-exist"
-        }
-      ]
     }
   ],
 
   "footer": [
     {
-      "name": "Contact",
-      "url": "/contact"
+      "name": "Resume",
+      "url": "/"
     },
     {
-      "name": "Changelog",
-      "url": "/changelog"
+      "name": "Projects",
+      "url": "/projects"
     }
   ]
 }
