@@ -1,4 +1,3 @@
-import { Calendar, MapPin } from "react-feather";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const WorkExp = ({ employment_history }) => {
@@ -30,7 +29,11 @@ const WorkExp = ({ employment_history }) => {
                   { location && (
                     <div className="flex items-center mt-1 md:mt-0">
                       <span className="text-gray-400 px-2 hidden md:inline">-</span>
-                      <MapPin className="text-gray-400 pr-1" />
+                      <span class="text-gray-400 pr-1">
+                        <svg class="feather-icon" width="22" height="22">
+                          <use href="node_modules/feather-icons/dist/feather-sprite.svg#map-pin" />
+                        </svg>
+                      </span>
                       {location}
                       { remote && (<span className="pl-1">(Remote)</span>)}
                     </div>
@@ -45,7 +48,11 @@ const WorkExp = ({ employment_history }) => {
                           { title && ( <div className="text-lg font-black italic">{title}</div> )}
                           { ( start_date || end_date ) && (
                             <div className="badge badge-md badge-neutral p-3 mt-2 md:mt-0 md:ml-3">
-                              <Calendar className="pr-2"/>
+                              <span class="pr-2">
+                                <svg class="feather-icon" width="16" height="16">
+                                  <use href="node_modules/feather-icons/dist/feather-sprite.svg#calendar" />
+                                </svg>
+                              </span>
                               <time className="">
                                 { start_date && ( start_date ) }{ end_date && ( ` - ${end_date}`) }
                               </time>

@@ -1,6 +1,5 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import Button from "@/components/LinkButton.astro";
 import type { PageType } from "@/content/page.types";
 
 export type Props = {
@@ -17,15 +16,6 @@ const { title, description, buttons } = page_data || {};
   {
     description && (
       <p class="text-lg text-center" set:html={markdownify(description)} />
-    )
-  }
-  {
-    buttons && (
-      <div class="mt-11 justify-center sm:flex">
-        {buttons.map((button) => (
-          <Button {...button} />
-        ))}
-      </div>
     )
   }
 </div>

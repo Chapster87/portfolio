@@ -30,6 +30,14 @@ svg[id="site_logo"] {
   }
 }
 
+svg[class="feather-icon"] {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
 // section style
 .section {
   @apply py-16;

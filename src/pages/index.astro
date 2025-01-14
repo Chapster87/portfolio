@@ -4,7 +4,6 @@ import WorkExp from "@/components/react/WorkExp"
 import Education from "@/components/Education.astro"
 import Certifications from "@/components/react/Certifications"
 import Skills from "@/components/react/Skills"
-import FeatherIcon from "@/components/react/FeatherIcon";
 import Base from "@/layouts/Base.astro";
 import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -31,7 +30,11 @@ const { employment_history } = employment && employment.data;
       <div class="row">
         <section>
           <h2 class="section-title">
-            <FeatherIcon name='thumbsUp' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#thumbs-up" />
+              </svg>
+            </span>
             About Me
           </h2>
           <div class="md:px-5">
@@ -49,7 +52,11 @@ const { employment_history } = employment && employment.data;
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
           <input class="w-full h-full" type="checkbox" aria-labelledby="experience-title" />
           <h2 id="experience-title" class="collapse-title section-title">
-            <FeatherIcon name='briefcase' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#briefcase" />
+              </svg>
+            </span>
             Work Experience
           </h2>
           <div class="collapse-content px-0 md:px-5">
@@ -67,7 +74,11 @@ const { employment_history } = employment && employment.data;
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
           <input class="w-full h-full" type="checkbox" aria-labelledby="education-title" />
           <h2 id="education-title" class="collapse-title section-title">
-            <FeatherIcon name='penTool' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#pen-tool" />
+              </svg>
+            </span>
             Education
           </h2>
           <div class="collapse-content px-0 md:px-5">
@@ -79,7 +90,11 @@ const { employment_history } = employment && employment.data;
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
           <input class="w-full h-full" type="checkbox" aria-labelledby="cert-title" />
           <h2 id="cert-title" class="collapse-title section-title">
-            <FeatherIcon name='star' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#star" />
+              </svg>
+            </span>
             Certifications
           </h2>
           <div class="collapse-content px-0 md:px-5">
@@ -97,7 +112,11 @@ const { employment_history } = employment && employment.data;
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
           <input class="w-full h-full" type="checkbox" aria-labelledby="hard-skills-title" />
           <h2 id="hard-skills-title" class="collapse-title section-title">
-            <FeatherIcon name='barChart' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#bar-chart" />
+              </svg>
+            </span>
             Hard Skills
           </h2>
           <div class="collapse-content px-0 md:px-5">
@@ -107,7 +126,11 @@ const { employment_history } = employment && employment.data;
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
           <input class="w-full h-full" type="checkbox"  aria-labelledby="soft-skills-title" />
           <h2 id="soft-skills-title" class="collapse-title section-title">
-            <FeatherIcon name='barChart2' size={26} className="mr-2" client:load />
+            <span class="mr-2">
+              <svg class="feather-icon" width="26" height="26">
+                <use href="node_modules/feather-icons/dist/feather-sprite.svg#bar-chart-2" />
+              </svg>
+            </span>
             Soft Skills
           </h2>
           <div class="collapse-content px-0 md:px-5">

@@ -1,6 +1,4 @@
 ---
-import FeatherIcon from "@/components/react/FeatherIcon";
-
 const { counter, className } = Astro.props;
 ---
 
@@ -19,7 +17,9 @@ const { counter, className } = Astro.props;
             <span
               class={"text-secondary inline-flex items-center justify-center ml-2"}
             >
-              <FeatherIcon name={item.icon ?? 'plus'} color={item.color} size={20} client:load />
+              <svg class="feather-icon" width="20" height="20">
+                <use href={`node_modules/feather-icons/dist/feather-sprite.svg#${item.icon ?? 'plus'}`} />
+              </svg>
             </span>
           </h3>
           <p>{item.name}</p>

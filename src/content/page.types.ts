@@ -1,7 +1,4 @@
 import type { HTMLAttributes } from "astro/types";
-import type { IconProps } from "react-feather";
-
-
 export interface LinkButtonI {
   /**
    * Button text can be provided as a string via the `label` prop or as a child element
@@ -9,7 +6,6 @@ export interface LinkButtonI {
   label?: string;
   mode?: "outline" | "solid";
   disabled?: boolean;
-  icon?: IconProps["name"];
   /**
    * Applies to the main button color (background, border, effects)
    * Possible values: in @/config/theme.json
