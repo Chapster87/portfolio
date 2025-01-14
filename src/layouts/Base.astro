@@ -136,7 +136,7 @@ const _noindex =
       var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
       // @ts-expect-error: ts(2339): Property 'async' does not exist on type 'HTMLElement'.
-      j.async=true;
+      j.defer=true;
       // @ts-expect-error: ts(2339): Property 'src' does not exist on type 'HTMLElement'.
       j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-T22TBLGK');
