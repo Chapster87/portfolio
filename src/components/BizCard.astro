@@ -5,20 +5,33 @@ import { Image } from "astro:assets";
 import BizCardActions from "@/components/BizCardActions.astro";
 
 const { card_data } = Astro.props;
-const { name, title, image, action_urls } = card_data;
+const { name, title, action_urls } = card_data;
+
+const importImage = async () => {
+  try {
+      const response = await import(`../assets/images/headshot.webp`);
+      return response;
+  } catch (error) {
+    // console.error(error);
+  }
+}
+
+const headshot = await importImage();
 ---
 
 <section class="personal-info">
   <div class="row">
     <div class="col-auto w-full sm:w-auto hidden sm:flex justify-center mb-3 pr-2">
-      <Image
-        class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface"
-        alt="Andy Chapman, headshot"
-        src={image}
-        width={144}
-        height={144}
-        loading="eager"
-      />
+      {headshot && (
+        <Image
+          class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface"
+          alt="Andy Chapman, headshot"
+          src={headshot.default}
+          width={140}
+          height={140}
+          loading="eager"
+        />
+      )}
     </div>
     <div class="col sm:pl-2 mb-3 text-center sm:text-left">
       <h2 set:html={markdownify(name)}/>

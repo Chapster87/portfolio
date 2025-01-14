@@ -1,0 +1,62 @@
+---
+import CounterComponent from "@/components/CounterComponent.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+
+const { education_data } = Astro.props;
+const { school, logo, start_year, end_year, location, degree, concentration } = education_data;
+
+const importImage = async () => {
+  try {
+      const response = await import(`../assets/images/mercyhurst.png`);
+      return response;
+  } catch (error) {
+    // console.error(error);
+  }
+}
+
+const mercyhurstLogo = await importImage();
+---
+
+<div class="card bg-base-200 dark:bg-neutral-content dark:text-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+  {mercyhurstLogo && (
+    <figure class="px-6 pt-6">
+      <Image
+        class="max-w-40"
+        alt={school}
+        src={mercyhurstLogo.default}
+        width={160}
+        height={198}
+        loading="lazy"
+      />
+    </figure>
+  )}
+  <div class="card-body block text-center p-6">
+    {school && (<h3 class="text-lg font-black mb-0">{school}</h3>)}
+    {location && (
+      <div class="block">
+        <p class="text-md font-bold pl-1">{location}</p>
+      </div>
+    )}
+    {(start_year && end_year) && (<span class="text-lg font-bold">{`${start_year} - ${end_year}`}</span>)}
+    {degree && (
+      <div>
+        <span class="text-sm font-bold">Degree: </span>
+        <span>{degree}</span>
+      </div>
+    )}
+    {(concentration && concentration.length > 0) && (
+      <div>
+        <span class="text-sm font-bold">Concentration(s): </span>
+        {concentration.map((major, i) => {
+          return (
+            <>
+              <span>{major}</span>
+              {i < concentration.length - 1 && (<span>, </span>)}
+            </>
+          )
+        })}
+      </div>
+    )}
+  </div>
+</div>
