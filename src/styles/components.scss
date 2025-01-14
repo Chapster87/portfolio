@@ -47,6 +47,10 @@ svg[id="site_logo"] {
   @apply text-base-100;
 }
 
+.btn-secondary {
+  @apply text-black dark:text-white dark:bg-secondary-ada;
+}
+
 // container
 .container {
   @apply mx-auto max-w-[1248px] px-4;

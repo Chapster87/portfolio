@@ -19,6 +19,9 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      colors: {
+        "secondary-ada": "#004BB3",
+      },
       fontFamily: {
         primary: ["var(--font-primary)", fontPrimaryType],
         secondary: ["var(--font-secondary)", fontSecondaryType],
@@ -98,6 +101,8 @@ module.exports = {
           primary: "#00b140",
           secondary: "#377cfb",
           accent: "#ea6947",
+          "--b1": "0% 0 0",
+          "--sada": "44.38% 0.1775 259.63",
         },
       }
     ]

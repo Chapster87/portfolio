@@ -47,8 +47,8 @@ const { employment_history } = employment && employment.data;
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
-          <input class="w-full h-full" type="checkbox" aria-hidden="true" />
-          <h2 class="collapse-title section-title">
+          <input class="w-full h-full" type="checkbox" aria-labelledby="experience-title" />
+          <h2 id="experience-title" class="collapse-title section-title">
             <FeatherIcon name='briefcase' size={26} className="mr-2" client:load />
             Work Experience
           </h2>
@@ -65,8 +65,8 @@ const { employment_history } = employment && employment.data;
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <!-- education -->
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
-          <input class="w-full h-full" type="checkbox" aria-hidden="true" />
-          <h2 class="collapse-title section-title">
+          <input class="w-full h-full" type="checkbox" aria-labelledby="education-title" />
+          <h2 id="education-title" class="collapse-title section-title">
             <FeatherIcon name='penTool' size={26} className="mr-2" client:load />
             Education
           </h2>
@@ -77,8 +77,8 @@ const { employment_history } = employment && employment.data;
 
         <!-- certifications -->
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
-          <input class="w-full h-full" type="checkbox" aria-hidden="true" />
-          <h2 class="collapse-title section-title">
+          <input class="w-full h-full" type="checkbox" aria-labelledby="cert-title" />
+          <h2 id="cert-title" class="collapse-title section-title">
             <FeatherIcon name='star' size={26} className="mr-2" client:load />
             Certifications
           </h2>
@@ -95,8 +95,8 @@ const { employment_history } = employment && employment.data;
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
-          <input class="w-full h-full" type="checkbox" aria-hidden="true" />
-          <h2 class="collapse-title section-title">
+          <input class="w-full h-full" type="checkbox" aria-labelledby="hard-skills-title" />
+          <h2 id="hard-skills-title" class="collapse-title section-title">
             <FeatherIcon name='barChart' size={26} className="mr-2" client:load />
             Hard Skills
           </h2>
@@ -105,8 +105,8 @@ const { employment_history } = employment && employment.data;
           </div>
         </section>
         <section class="collapse max-sm:collapse-plus sm:collapse-open">
-          <input class="w-full h-full" type="checkbox" aria-hidden="true" />
-          <h2 class="collapse-title section-title">
+          <input class="w-full h-full" type="checkbox"  aria-labelledby="soft-skills-title" />
+          <h2 id="soft-skills-title" class="collapse-title section-title">
             <FeatherIcon name='barChart2' size={26} className="mr-2" client:load />
             Soft Skills
           </h2>
