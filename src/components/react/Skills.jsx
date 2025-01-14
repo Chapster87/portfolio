@@ -20,9 +20,11 @@ const Skills = ({ skills }) => {
             return (
               <div key={i} className="card bg-base-200 dark:bg-neutral-content dark:text-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 {logo && (
-                  <figure className="px-6 pt-6">
-                    <img src={logo} alt={name} className="" loading="lazy" />
-                  </figure>
+                  <div className="p-3">
+                    <figure className="p-3 bg-white rounded-xl">
+                      <img src={logo} alt={name} className="" loading="lazy" />
+                    </figure>
+                  </div>
                 )}
                 <div className="card-body items-center text-center p-6">
                   {name && (<h2 className="card-title text-lg">{name}</h2>)}
