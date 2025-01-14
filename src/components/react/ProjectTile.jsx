@@ -39,11 +39,11 @@ const ProjectTile = ({ content }) => {
         {platform && (
           <div className="badge badge-md badge-primary text-white mt-1">{platform}</div>
         )}
-        {short_desc && (<div className="py-3"><p className="text-md">{short_desc}</p></div>)}
+        {short_desc && (<div className="py-3"><p className="text-base">{short_desc}</p></div>)}
         <div className="card-actions justify-center mt-auto">
           {hasPage && (
             <>
-              <a href={`/project/${content.id}`} className="btn btn-secondary btn-wide" data-astro-prefetch>Read More</a>
+              <a href={`/project/${content.id}`} className="btn btn-secondary sm:btn-wide w-full" data-astro-prefetch>Read More</a>
               {url && (<a href={url} className="link" data-astro-prefetch>View Site</a>)}
             </>
           )}

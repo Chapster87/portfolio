@@ -10,7 +10,7 @@ const { name, title, image, action_urls } = card_data;
 
 <section class="personal-info">
   <div class="row">
-    <div class="col-auto flex justify-center mb-3 pr-2">
+    <div class="col-auto w-full sm:w-auto hidden sm:flex justify-center mb-3 pr-2">
       <Image
         class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface"
         alt="Andy Chapman, headshot"
@@ -20,9 +20,9 @@ const { name, title, image, action_urls } = card_data;
         loading="eager"
       />
     </div>
-    <div class="col pl-2 mb-3">
+    <div class="col sm:pl-2 mb-3 text-center sm:text-left">
       <h2 set:html={markdownify(name)}/>
-      <p class="text-secondary text-md" set:html={markdownify(title)}/>
+      <p class="text-secondary text-sm sm:text-base lg:text-lg" set:html={markdownify(title)}/>
       <div class="row hidden sm:flex mt-3">
         <BizCardActions action_urls={action_urls} />
       </div>
@@ -50,5 +50,5 @@ const { name, title, image, action_urls } = card_data;
       },
     ]}
   />
-  <p class="text-sm color-base-200 w-full text-center pt-4">*Based on <a class="link" href="https://medium.com/modern-stack/how-much-computer-code-has-been-written-c8c03100f459" target="_blank" rel="noopener noreferrer nofollow">Medium.com article</a> calculating of total lines of code in 2020, probably wildly inaccurate</p>
+  <p class="text-[12px] leading-5 sm:text-sm color-base-200 w-full text-center pt-4">*Based on <a class="link" href="https://medium.com/modern-stack/how-much-computer-code-has-been-written-c8c03100f459" target="_blank" rel="noopener noreferrer nofollow">Medium.com article</a> calculating of total lines of code in 2020, probably wildly inaccurate</p>
 </section>

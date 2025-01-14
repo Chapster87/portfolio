@@ -12,12 +12,12 @@ const has_social = Object.entries(social).some(
   ([key, value]) => key != "title" && value
 );
 ---
-<footer class="footer bg-neutral text-neutral-content p-10">
+<footer class="footer bg-neutral text-neutral-content py-6 sm:py-10">
   <div class="container !bg-transparent">
-    <div class="flex justify-between w-full">
-      <aside>
+    <div class="flex flex-col sm:flex-row justify-between w-full">
+      <aside class="flex flex-col items-center sm:items-start">
         <Logo showText={false} />
-        <p>Andy Chapman<br />
+        <p class="mt-3">Andy Chapman<br />
           {location}
         </p>
         <a class="mb-2 hover:text-secondary" href={`mailto:${email}`}>
@@ -29,9 +29,9 @@ const has_social = Object.entries(social).some(
           {footer_description}
         </p>
       </div> -->
-      <nav>
+      <nav class="text-center sm:text-left py-6 sm:py-0">
         <h6 class="footer-title">Quick Links</h6>
-        <ul class="list-none">
+        <ul class="list-none ml-0">
           {footer.map((item, i) => (
             <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
               <a
@@ -47,8 +47,8 @@ const has_social = Object.entries(social).some(
       {
         has_social && (
         <nav>
-          <h6 class="footer-title">{social.title ?? "Social"}</h6>
-          <Social source={social} className="social-icons ml-0" />
+          <h6 class="footer-title text-center sm:text-left pt-6 sm:pt-0">{social.title ?? "Social"}</h6>
+          <Social source={social} className="social-icons ml-0 text-center sm:text-left" />
         </nav>
         )
       }
