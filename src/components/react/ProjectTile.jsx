@@ -2,9 +2,9 @@ const ProjectTile = ({ content }) => {
   const  { title, url, company, platform, start_date, end_date, short_desc, image_thumb, page_disabled } =  (content && content.data) || {};
   const hasPage = content && content.body && !page_disabled;
   return (
-    <div className="card card-compact bg-base-100 border-2 border-base-300 dark:border-neutral shadow-lg hover:shadow-xl transition-all hover:scale-105">
+    <div className="card card-compact bg-base-100 border-2 border-base-300 dark:bg-neutral shadow-lg hover:shadow-xl transition-all hover:scale-105">
       {image_thumb && (
-        <figure className="bg-base-200 pt-5 px-7">
+        <figure className="bg-base-200 dark:bg-base-content pt-5 px-7">
           {hasPage ? (
             <a href={`/project/${content.id}`} data-astro-prefetch>
               <img src={image_thumb} alt={`${title} Screenshot`} />

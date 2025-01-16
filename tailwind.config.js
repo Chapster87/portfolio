@@ -100,9 +100,12 @@ module.exports = {
           ...require("daisyui/src/theming/themes")["business"],
           primary: "#00b140",
           secondary: "#377cfb",
-          accent: "#ea6947",
-          "--b1": "0% 0 0",
           "--sada": "44.38% 0.1775 259.63",
+          accent: "#ea6947",
+          "--n": "27.39% 0.0055 286.03",
+          "--nc": "100% 0 0",
+          "--bc": "93% 0 0",
+          
         },
       }
     ]

@@ -18,11 +18,11 @@ const Skills = ({ skills }) => {
             }
 
             return (
-              <div key={i} className="card bg-base-200 dark:bg-neutral-content dark:text-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <div key={i} className="card bg-base-200 dark:bg-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 {logo && (
                   <div className="p-3">
                     <figure className="p-3 bg-white rounded-xl">
-                      <img src={logo} alt={name} className="" loading="lazy" />
+                      <img src={logo} alt={name} loading="lazy" />
                     </figure>
                   </div>
                 )}

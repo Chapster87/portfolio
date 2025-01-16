@@ -42,8 +42,8 @@ const { title, url, company, platform, start_date, end_date } = data;
 
 <Base entry_keys={['projectsContent', projectId]}>
   <section class="main pb-10">
-    <div class="bg-base-200 p-3">
-      <div class="breadcrumbs container bg-base-200 text-sm">
+    <div class="bg-base-200 dark:bg-base-content p-3">
+      <div class="breadcrumbs container text-base-300 !bg-base-200 dark:!bg-base-content text-sm">
         <ul>
           <li><a href="/" class="link">Home</a></li>
           <li><a href="/projects" class="link">Projects</a></li>
@@ -53,7 +53,7 @@ const { title, url, company, platform, start_date, end_date } = data;
     </div>
     {(websiteImage && websiteImage.default) && (
       <div class="website-hero">
-        <figure class="flex justify-center mb-4 bg-base-200">
+        <figure class="flex justify-center mb-4 bg-base-200 dark:bg-base-content">
           {url ? (
             <a href={url} target="_blank" rel="noopener noreferrer nofollow">
               <Image src={websiteImage.default} alt={`${title} Website Preview`} />

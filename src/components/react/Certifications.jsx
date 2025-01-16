@@ -6,11 +6,13 @@ const Certifications = ({ cert_data }) => {
           {cert_data.map((cert, i) => {
             const { name, issue_date, logo, url } = cert;
             return (
-              <div key={i} className="card bg-base-200 dark:bg-neutral-content dark:text-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <div key={i} className="card bg-base-200 dark:bg-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 {logo && (
-                  <figure className="px-6 pt-6 h-36">
-                    <img src={logo} alt={name} className="max-w-40" loading="lazy" />
-                  </figure>
+                  <div className="p-3">
+                    <figure className="h-36 p-3 bg-white rounded-xl">
+                      <img src={logo} alt={name} className="max-w-40 max-h-full" loading="lazy" />
+                    </figure>
+                  </div>
                 )}
                 <div className="card-body items-center text-center p-6">
                   {name && (<h2 className="card-title text-lg">{name}</h2>)}
