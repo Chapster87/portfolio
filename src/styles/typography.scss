@@ -1,9 +1,75 @@
-// container
+h1 {
+  @apply font-primary font-bold text-4xl lg:text-5xl
+}
+
+h2 {
+  @apply font-primary font-bold text-3xl lg:text-4xl
+}
+
+h3 {
+  @apply font-primary font-bold text-2xl lg:text-3xl
+}
+
+h4 {
+  @apply font-primary font-bold text-xl lg:text-2xl
+}
+
+h5 {
+  @apply font-primary font-bold text-lg lg:text-xl
+}
+
+p {
+  @apply font-primary text-base;
+}
+
+pre {
+  @apply rounded p-4
+}
+
+ul,
+ol {
+  li {
+    @apply leading-5 mb-1.5;
+  }
+}
+
+ul {
+  @apply list-disc;
+  
+}
+
 .prose {
   background-color: rgba(255, 255, 255, 0.4);
 
   [data-theme='business'] & {
     background-color: oklch(var(--b1)/0.4);
+  }
+
+  ul,
+  ol {
+    li {
+      font-weight: normal;
+    }
+
+    &.lvl-1 {
+      & > li {
+        @apply font-bold;
+      }
+    }
+
+    &.lvl-2 {
+      & > li {}
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    ol {
+      list-style: lower-alpha;
+      ol {
+        list-style: lower-roman;
+      }
+    }
   }
 }
 

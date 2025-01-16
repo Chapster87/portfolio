@@ -29,9 +29,9 @@ const has_social = Object.entries(social).some(
           {footer_description}
         </p>
       </div> -->
-      <nav class="text-center sm:text-left py-6 sm:py-0">
+      <nav class="text-center sm:text-left mb-4 sm:mb-0 py-6 sm:py-0">
         <span class="footer-title">Quick Links</span>
-        <ul class="list-none ml-0">
+        <ul class="list-none mt-4">
           {footer.map((item, i) => (
             <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
               <a
@@ -46,9 +46,9 @@ const has_social = Object.entries(social).some(
       </nav>
       {
         has_social && (
-        <nav>
+        <nav class="text-center sm:text-left">
           <span class="footer-title text-center sm:text-left pt-6 sm:pt-0">{social.title ?? "Social"}</span>
-          <Social source={social} className="social-icons ml-0 text-center sm:text-left" />
+          <Social source={social} className="social-icons mt-4 ml-0 text-center sm:text-left" />
         </nav>
         )
       }

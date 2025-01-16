@@ -1,6 +1,6 @@
 const ProjectTile = ({ content }) => {
-  const hasPage = content && content.body;
-  const  { title, url, company, platform, start_date, end_date, short_desc, image_thumb } =  (content && content.data) || {};
+  const  { title, url, company, platform, start_date, end_date, short_desc, image_thumb, page_disabled } =  (content && content.data) || {};
+  const hasPage = content && content.body && !page_disabled;
   return (
     <div className="card card-compact bg-base-100 border-2 border-base-300 dark:border-neutral shadow-lg hover:shadow-xl transition-all hover:scale-105">
       {image_thumb && (
@@ -44,9 +44,14 @@ const ProjectTile = ({ content }) => {
           {hasPage && (
             <>
               <a href={`/project/${content.id}`} className="btn btn-secondary sm:btn-wide w-full" data-astro-prefetch>Read More</a>
-              {url && (<a href={url} className="link" data-astro-prefetch>View Site</a>)}
             </>
           )}
+          {page_disabled && (
+            <>
+              <a href={`/project/${content.id}`} className="btn btn-disabled sm:btn-wide w-full" data-astro-prefetch>Coming Soon</a>
+            </>
+          )}
+          {url && (<a href={url} className="link" target="_blank" rel="noopener noreferrer nofollow">View Site</a>)}
         </div>
       </div>
     </div>

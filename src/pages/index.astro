@@ -1,5 +1,6 @@
 ---
 import BizCard from "@/components/BizCard.astro"
+import AboutMe from "@/components/AboutMe.astro"
 import WorkExp from "@/components/react/WorkExp"
 import Education from "@/components/Education.astro"
 import Certifications from "@/components/react/Certifications"
@@ -9,7 +10,7 @@ import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const homepage = await getEntry('homepage', 'index');
-const { hero, summary, education, certifications, skills } = homepage && homepage.data;
+const { hero, education, certifications, skills } = homepage && homepage.data;
 const employment = await getEntry('workExp', 'index');
 const { employment_history } = employment && employment.data;
 ---
@@ -25,11 +26,12 @@ const { employment_history } = employment && employment.data;
   </div>
 
   <!-- summary -->
-  <div class="py-5">
+  <div class="pb-1 pt-5 sm:b-5">
     <div class="container intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="row">
-        <section>
-          <h2 class="section-title">
+        <section class="collapse max-sm:collapse-plus sm:collapse-open">
+          <input class="w-full h-full" type="checkbox" aria-labelledby="about-title" />
+          <h2 id="about-title" class="collapse-title section-title">
             <span class="mr-2">
               <svg class="feather-icon" width="26" height="26">
                 <use href="../feather-sprite.svg#thumbs-up" />
@@ -37,8 +39,8 @@ const { employment_history } = employment && employment.data;
             </span>
             About Me
           </h2>
-          <div class="md:px-5">
-            <p set:html={markdownify(summary)} />
+          <div class="collapse-content px-0 md:px-5">
+            <AboutMe />
           </div>
         </section>
       </div>

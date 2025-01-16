@@ -24,7 +24,6 @@ const indexPage = defineCollection({
           resume_url: z.string()
         }),
       }),
-      summary: z.string(),
       education: z.object({
         school: z.string(),
         start_year: z.string(),
@@ -64,24 +63,6 @@ const indexPage = defineCollection({
 
 const workExpData = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/workExp" }),
-  // schema: z.intersection(
-  //   z.object({
-  //     employment_history: z.object({
-  //       employer: z.string(),
-  //       location: z.string(),
-  //       remote: z.boolean(),
-  //       positions: z.array(
-  //         z.object({
-  //           title: z.string(),
-  //           start_date: z.string(),
-  //           end_date: z.string(),
-  //           positions: z.array(z.string()) 
-  //         }),
-  //       ),
-  //     }),
-  //   }),
-  //   zodPageConfig,
-  // )
 });
 
 const projectsPage = defineCollection({
@@ -114,13 +95,18 @@ const projectsContent = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projectsContent" }),
 });
 
+const sfccAcceleratorData = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/sfccAccelerator" }),
+});
+
 // Export collections
 export const collections = {
   pages: pagesCollection,
   homepage: indexPage,
   workExp: workExpData,
   projects: projectsPage,
-  projectsContent: projectsContent
+  projectsContent: projectsContent,
+  sfccAcceleratorData: sfccAcceleratorData
 };
 
 

@@ -20,16 +20,20 @@ image_thumb: '/images/projects/asu-thumb.webp'
   <p>Instead of "selling" products like your standard commerce website, ASU uses SFRA to accept donations for various funds. Users can browse the website, find a fun that appeals to them, and then add the fund and a monetary denomination to the cart. To make this process smooth as possible, our team customized product pages to display denomination buttons, acting like "variations" as well as a "Enter an Amount" input for custom amounts.</p>
   <p>For checkout, ASU wanted to be able to gather all the customers information in a single-page experience, rather than the out-of-the-box method that jumps page to page as you step through the checkout. (Even if OOTB box SFRA is a faux-1-page checkout since the page "changes" are handled with ajax calls.) Working with guidance from the Lead BED, I heavily modified both the javascript & css that split the the checkout into "steps" and successfully handle all input from a single page.</p>
   <p>Finally, since the site was gather donations only, the shipping step of checkout not required. Rather than remove it entirely, we put it behind a conditional that would look for an attribute on cart items that would allows the step to show or not. This allowed the client to, in the future, tag certain funds that they may want to send a thank you or "gift" to the user.</p>
-  <p class="text-lg font-bold">Notable customizations</p>
-  <ul>
+  <h2>Notable Customizations</h2>
+  <ul class="lvl-1">
     <li>Style Guide Implemented</li>
-    <li>Checkout</li>
+    <li>
+      Checkout
       <ul>  
         <li>Modified SFRA checkout flow to be a true 1-page checkout</li>
-        <li>Conditionalized shipping step from checkout for donation "orders"</li>
+        <li>
+          Conditionalized shipping step from checkout for donation "orders"
           <ul>  
             <li>Allowed customer flexibility to configure future donations to include "gifts" and request a shipping address</li>
           </ul>
+        </li>
       </ul>
+    </li>
   </ul>
 </div>

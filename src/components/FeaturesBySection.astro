@@ -1,0 +1,61 @@
+---
+const { feature_data } = Astro.props;
+const { featureSections } = feature_data;
+---
+
+<div class="collapse-wrapper">
+  <h2>Features & Enhancements - By Section</h2>
+  {featureSections.map((group, i) => {
+    const { section, summary, features } = group;
+    return (
+      <>
+        {features && features.length > 0 && (
+          <div class="collapse themed collapse-arrow">
+            {i === 0 ? (
+              <input type="checkbox" aria-labelledby="section-global" checked/>
+            ) : (
+              <input type="checkbox" aria-labelledby="section-global" checked/>
+            )}
+            
+            <h3 id="section-global" class="collapse-title">{section}</h3>
+            <div class="collapse-content">
+              {summary && (<p>{summary}</p>)}
+              <ol>
+                {features.map((feature, i) => {
+                  const { title, desc } = feature;
+                  return (
+                    <li>
+                      {title && (<span class="underline">{title}</span>)}
+                      
+                          {(typeof desc !== 'object' && desc !== null) && ( 
+                            <ul>
+                              <li>{desc}</li>
+                            </ul>
+                          )}
+                          {(typeof desc === 'object' && desc !== null) &&  (
+                            <ul style="list-style: lower-latin;">
+                              {desc.map((subFeature, i) => {
+                                const { title, desc } = subFeature;
+                                return (
+                                  <li>
+                                    {title && (<span class="underline">{title}</span>)}
+                                    <ul>
+                                      <li>{desc}</li>
+                                    </ul>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          )}
+                      
+                    </li>
+                  )
+                })}
+              </ol>
+            </div>
+          </div>
+        )}
+      </>
+    )
+  })}
+</div>

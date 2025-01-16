@@ -29,8 +29,8 @@ const WorkExp = ({ employment_history }) => {
                   { location && (
                     <div className="flex items-center mt-1 md:mt-0">
                       <span className="text-gray-400 px-2 hidden md:inline">-</span>
-                      <span class="text-gray-400 pr-1">
-                        <svg class="feather-icon" width="22" height="22">
+                      <span className="text-gray-400 pr-1">
+                        <svg className="feather-icon" width="22" height="22">
                           <use href="../feather-sprite.svg#map-pin" />
                         </svg>
                       </span>
@@ -48,8 +48,8 @@ const WorkExp = ({ employment_history }) => {
                           { title && ( <div className="text-lg font-black italic">{title}</div> )}
                           { ( start_date || end_date ) && (
                             <div className="badge badge-md badge-neutral p-3 mt-2 md:mt-0 md:ml-3">
-                              <span class="pr-2">
-                                <svg class="feather-icon" width="16" height="16">
+                              <span className="pr-2">
+                                <svg className="feather-icon" width="16" height="16">
                                   <use href="../feather-sprite.svg#calendar" />
                                 </svg>
                               </span>
@@ -60,7 +60,7 @@ const WorkExp = ({ employment_history }) => {
                           )}
                         </div>
                         {(notes && notes.length > 0) && (
-                          <ul className="mt-3 md:mt-2">
+                          <ul className="mt-3 md:mt-2 pl-6">
                             {notes.map((note, i) => (
                               <li key={i}>{note}</li>
                             ))}

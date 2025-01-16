@@ -1,8 +1,9 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { getCollection } from "astro:content";
+import FeaturesBySection from "@/components/FeaturesBySection.astro"
+import { getCollection, getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from 'astro:assets';
+import {  Image } from 'astro:assets';
 
 const { projectId } = Astro.params;
 
@@ -28,6 +29,12 @@ const importImage = async () => {
 
 const websiteImage = await importImage();
 
+let sfccAcceleratorData = null;
+
+if (projectId && projectId === "sfcc-accelerator") {
+  sfccAcceleratorData = await getEntry('sfccAcceleratorData', 'index');
+}
+
 const { project } = Astro.props;
 const { data, body } = project;
 const { title, url, company, platform, start_date, end_date } = data;
@@ -48,7 +55,7 @@ const { title, url, company, platform, start_date, end_date } = data;
       <div class="website-hero">
         <figure class="flex justify-center mb-4 bg-base-200">
           {url ? (
-            <a href={url} target="_blank" rel="noopener noreferrer">
+            <a href={url} target="_blank" rel="noopener noreferrer nofollow">
               <Image src={websiteImage.default} alt={`${title} Website Preview`} />
             </a>
           ) : (
@@ -98,8 +105,11 @@ const { title, url, company, platform, start_date, end_date } = data;
       </div>
       <div class="row mb-8">
         <div set:html={markdownify(body)}/>
+        <!-- {(sfccAcceleratorData && sfccAcceleratorData.data) && (
+          <FeaturesBySection feature_data={sfccAcceleratorData.data} />
+        )} -->
       </div>
-      <div class="row text-center">
+      <div class="row text-center mt-5">
           <a href="/projects" class="link link-primary text-xl font-bold">Back to Projects</a>
     </div>
   </section>

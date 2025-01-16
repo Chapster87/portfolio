@@ -193,6 +193,37 @@ svg[class="feather-icon"] {
   }
 }
 
+.collapse-wrapper {
+  @apply prose dark:prose-invert max-w-full;
+}
+
+.collapse.themed {
+  @apply rounded-md;
+
+  & > input[type='checkbox'] {
+    @apply w-full h-full rounded-md;
+    // &:checked + .collapse-title {
+    //   @apply border-b-0;
+    // }
+  }
+
+  .collapse-title {
+    @apply bg-base-200 rounded-t-md m-0 text-base lg:text-xl;
+  }
+
+  .collapse-content {
+    @apply border-2 border-t-0 border-base-200 rounded-b-md;
+  }
+
+  & + .collapse {
+    @apply mt-2;
+  }
+}
+
+.collapse-arrow > .collapse-title:after {
+  top: 50%;
+}
+
 //changelogs
 .changelogs {
   &-content {

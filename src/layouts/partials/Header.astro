@@ -45,7 +45,7 @@ const { pathname } = Astro.url;
 
     <ul
       id="nav-menu"
-      class="list-none navbar-nav order-4 hidden w-full ml-0 lg:order-1 lg:flex lg:w-auto lg:space-x-2 p-6 lg:p-0"
+      class="list-none navbar-nav order-4 hidden w-full lg:order-1 lg:flex lg:w-auto lg:space-x-2 p-6 lg:p-0"
     >
       {
         main.map((menu) => (
@@ -69,7 +69,7 @@ const { pathname } = Astro.url;
                 </span>
                 <ul
                   id="dropdown"
-                  class="list-none ml-0 nav-dropdown-list"
+                  class="list-none nav-dropdown-list"
                 >
                   {menu.children?.map((child) => (
                     <li class="nav-dropdown-item">
