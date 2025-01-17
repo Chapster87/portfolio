@@ -33,10 +33,7 @@ export default defineConfig({
     tailwind(),
     AutoImport({
       // import react components to use in mdx
-      imports: [
-        "@/components/react/Changelog.tsx",
-        "@/components/Badge.astro",
-      ],
+      imports: [],
     }),
     mdx()
   ],
