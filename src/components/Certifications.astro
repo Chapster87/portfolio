@@ -1,0 +1,38 @@
+---
+import DynamicImg from "./DynamicImg.astro";
+
+const { cert_data } = Astro.props;
+---
+
+{(cert_data && cert_data.length > 0) && (
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {cert_data.map((cert, i) => {
+      const { name, issue_date, logo, logo_width, url } = cert;
+      return (
+        <div class="card bg-base-200 dark:bg-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+          {logo && (
+            <div class="p-3">
+              <figure class="h-36 p-3 bg-white rounded-xl">
+                <DynamicImg imagePath={logo} altText={name} class="max-h-full" width={logo_width} />
+              </figure>
+            </div>
+          )}
+          <div class="card-body items-center text-center p-6">
+            {name && (<h2 class="card-title text-lg">{name}</h2>)}
+            {issue_date  && (
+              <div class="issue-date">
+                <span class="text-sm font-bold">Issued: </span>
+                <span>{issue_date}</span>
+              </div>
+            )}
+            {url && (
+              <div class="card-actions">
+                <a href={url} class="link link-primary">View Cert</a>
+              </div>
+            )}
+          </div>
+        </div>
+      )
+    })}
+  </div>
+)}
