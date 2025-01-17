@@ -1,0 +1,82 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import DynamicImg from "./DynamicImg.astro";
+
+const { employment_history } = Astro.props;
+---
+
+<div class="work-history row">
+  <ul class="timeline timeline-snap-icon timeline-compact timeline-vertical ml-0">
+    {employment_history.map((job, i) => {
+      const { employer, location, remote, positions } = job;
+      return (
+        <li>
+          { i !== 0 && (
+            <hr />
+          )}
+          <div class="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="text-secondary h-5 w-5">
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class={`timeline-end pl-2${i < (employment_history.length - 1) ? ' !mb-2' : ''}`}>
+            <div class="employer flex flex-col md:flex-row" >
+              { employer && ( <div class="text-lg font-black text-secondary" set:html={markdownify(employer)}></div> )}
+              { location && (
+                <div class="flex items-center mt-1 md:mt-0">
+                  <span class="text-gray-400 px-2 hidden md:inline">-</span>
+                  <span class="text-gray-400 pr-1">
+                    <svg class="feather-icon" width="22" height="22">
+                      <use href="../feather-sprite.svg#map-pin" />
+                    </svg>
+                  </span>
+                  {location}
+                  { remote && (<span class="pl-1">(Remote)</span>)}
+                </div>
+              )}
+            </div>
+            {(positions && positions.length > 0) && (
+              positions.map((position, i) => {
+                const { title, start_date, end_date, notes } = position;
+                return ( 
+                  <div class={`employment-position py-2 md:p-2${i < (positions.length - 1) ? ' mb-2' : ''}`}>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                      { title && ( <div class="text-lg font-black italic">{title}</div> )}
+                      { ( start_date || end_date ) && (
+                        <div class="badge badge-md badge-neutral p-3 mt-2 md:mt-0 md:ml-3">
+                          <span class="pr-2">
+                            <svg class="feather-icon" width="16" height="16">
+                              <use href="../feather-sprite.svg#calendar" />
+                            </svg>
+                          </span>
+                          <time class="">
+                            { start_date && ( start_date ) }{ end_date && ( ` - ${end_date}`) }
+                          </time>
+                        </div>
+                      )}
+                    </div>
+                    {(notes && notes.length > 0) && (
+                      <ul class="mt-3 md:mt-2 pl-6">
+                        {notes.map((note, i) => (
+                          <li>{note}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )
+              })
+            )}
+          </div>
+          <hr />
+        </li>
+      );
+    })}
+  </ul>
+</div>
