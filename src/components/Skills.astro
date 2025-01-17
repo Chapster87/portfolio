@@ -1,0 +1,49 @@
+---
+import DynamicImg from "./DynamicImg.astro";
+
+const { skills } = Astro.props;
+
+---
+
+{(skills && skills.length > 0) && (
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {skills.map((skill, i) => {
+      const { name, logo, level } = skill;
+      let levelPercentage = 0;
+
+      if (level === "Novice") {
+        levelPercentage = 25;
+      } else if (level === "Intermediate") {
+        levelPercentage = 50;
+      } else if (level === "Proficient") {
+        levelPercentage = 75;
+      } else if (level === "Expert") {
+        levelPercentage = 100;
+      }
+
+      return (
+        <div class="card bg-base-200 dark:bg-neutral border-2 border-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+          {logo && (
+            <div class="p-3">
+              <figure class="p-3 bg-white rounded-xl">
+                <DynamicImg imagePath={logo} altText={name} loading="lazy"/>
+              </figure>
+            </div>
+          )}
+          <div class="card-body items-center text-center p-6">
+            {name && (<h2 class="card-title text-lg">{name}</h2>)}
+            {level  && (
+              <>
+                <div class="skill-level">
+                  <span class="text-sm font-bold">Proficiency: </span>
+                  <span>{level}</span>
+                </div>
+                <progress class="progress progress-secondary w-full" value={levelPercentage} max="100"></progress>
+              </>
+            )}
+          </div>
+        </div>
+      )
+    })}
+  </div>
+)}
