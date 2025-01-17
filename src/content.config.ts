@@ -17,6 +17,7 @@ const indexPage = defineCollection({
       hero: z.object({
         name: z.string(),
         title: z.string(),
+        headshot: z.string(),
         action_urls: z.object({
           linkedin_url: z.string(),
           github_url: z.string(),
@@ -26,6 +27,7 @@ const indexPage = defineCollection({
       }),
       education: z.object({
         school: z.string(),
+        logo: z.string(),
         start_year: z.string(),
         end_year: z.string(),
         location: z.string(),

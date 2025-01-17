@@ -13,7 +13,7 @@ const { cert_data } = Astro.props;
           {logo && (
             <div class="p-3">
               <figure class="h-36 p-3 bg-white rounded-xl">
-                <DynamicImg imagePath={logo} altText={name} class="max-h-full" width={logo_width} />
+                <DynamicImg imagePath={logo} altText={name} className="max-h-full" width={logo_width} loading="lazy"/>
               </figure>
             </div>
           )}

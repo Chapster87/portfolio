@@ -3,7 +3,7 @@ import Base from "@/layouts/Base.astro";
 import FeaturesBySection from "@/components/FeaturesBySection.astro"
 import { getCollection, getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
-import {  Image } from 'astro:assets';
+import DynamicImg from "@/components/DynamicImg.astro";
 
 const { projectId } = Astro.params;
 
@@ -18,17 +18,6 @@ export async function getStaticPaths() {
   });
 }
 
-const importImage = async () => {
-  try {
-      const response = await import(`../../assets/images/projects/${projectId}-website.webp`);
-      return response;
-  } catch (error) {
-    // console.error(error);
-  }
-}
-
-const websiteImage = await importImage();
-
 let sfccAcceleratorData = null;
 
 if (projectId && projectId === "sfcc-accelerator") {
@@ -37,13 +26,13 @@ if (projectId && projectId === "sfcc-accelerator") {
 
 const { project } = Astro.props;
 const { data, body } = project;
-const { title, url, company, platform, start_date, end_date } = data;
+const { image_hero, title, url, company, platform, start_date, end_date } = data;
 ---
 
 <Base entry_keys={['projectsContent', projectId]}>
   <section class="main pb-10">
     <div class="bg-base-200 dark:bg-base-content p-3">
-      <div class="breadcrumbs container text-base-300 !bg-base-200 dark:!bg-base-content text-sm">
+      <div class="breadcrumbs container text-base-content !bg-base-200 dark:!bg-base-content text-sm">
         <ul>
           <li><a href="/" class="link">Home</a></li>
           <li><a href="/projects" class="link">Projects</a></li>
@@ -51,15 +40,15 @@ const { title, url, company, platform, start_date, end_date } = data;
         </ul>
       </div>
     </div>
-    {(websiteImage && websiteImage.default) && (
+    {(image_hero && title) && (
       <div class="website-hero">
         <figure class="flex justify-center mb-4 bg-base-200 dark:bg-base-content">
           {url ? (
             <a href={url} target="_blank" rel="noopener noreferrer nofollow">
-              <Image src={websiteImage.default} alt={`${title} Website Preview`} />
+              <DynamicImg imagePath={image_hero} altText={`${title} Website Preview`} loading="eager"/>
             </a>
           ) : (
-            <Image src={websiteImage.default} alt={`${title} Website Preview`} />
+            <DynamicImg imagePath={image_hero} altText={`${title} Website Preview`} loading="eager"/>
           )}
         </figure>
       </div>

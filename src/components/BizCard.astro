@@ -1,36 +1,18 @@
 ---
 import CounterComponent from "@/components/CounterComponent.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from "astro:assets";
+import DynamicImg from "./DynamicImg.astro";
 import BizCardActions from "@/components/BizCardActions.astro";
 
 const { card_data } = Astro.props;
-const { name, title, action_urls } = card_data;
-
-const importImage = async () => {
-  try {
-      const response = await import(`../assets/images/headshot.webp`);
-      return response;
-  } catch (error) {
-    // console.error(error);
-  }
-}
-
-const headshot = await importImage();
+const { name, title, headshot, action_urls } = card_data;
 ---
 
 <section class="personal-info">
   <div class="row">
     <div class="col-auto w-full sm:w-auto hidden sm:flex justify-center mb-3 pr-2">
       {headshot && (
-        <Image
-          class="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface"
-          alt="Andy Chapman, headshot"
-          src={headshot.default}
-          width={140}
-          height={140}
-          loading="eager"
-        />
+        <DynamicImg imagePath={headshot} altText="Andy Chapman, headshot" className="w-28 h-28 sm:w-36 sm:h-36 p-0.5 rounded-full ring-4 ring-secondary dark:ring-surface" width={140} height={140} loading="eager"/>
       )}
     </div>
     <div class="col sm:pl-2 mb-3 text-center sm:text-left">
