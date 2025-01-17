@@ -23,7 +23,7 @@ const projectsContent = await getCollection("projectsContent");
         {work_projects.map((item) => {
           const content = projectsContent.find((content) => content.id === item.content_id);
           return (
-            <ProjectTile content={content} client:load />
+            <ProjectTile content={content} />
           );
         })}
       </div>
@@ -36,7 +36,7 @@ const projectsContent = await getCollection("projectsContent");
         {freelance_projects.map((item) => {
           const content = projectsContent.find((content) => content.id === item.content_id);
           return (
-            <ProjectTile content={content} client:load />
+            <ProjectTile content={content} />
           );
         })}
       </div>
@@ -49,7 +49,7 @@ const projectsContent = await getCollection("projectsContent");
         {other_projects.map((item) => {
           const content = projectsContent.find((content) => content.id === item.content_id);
           return (
-            <ProjectTile content={content} client:load />
+            <ProjectTile content={content} />
           );
         })}
       </div>
