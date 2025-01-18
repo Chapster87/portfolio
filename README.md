@@ -64,7 +64,6 @@ The project structure is designed to be easy to understand and navigate. Here's 
 │       └── theme.json  # Your theme names and font settings (used in tailwind.config.js, related to styles/theme.css)
 │   ├── content/        # Markdown and mdx files for dynamic content following the Astro conventions (see below)
 │   ├── components/     # Reusable components
-│       └── react/      # React components
 │   ├── layouts/        # Astro Reutilizable Layout components
 │   ├── pages/          # Site pages (follows Astro conventions)
 │   ├── styles/         # Global and component-specific styles
@@ -73,41 +72,6 @@ The project structure is designed to be easy to understand and navigate. Here's 
 ├── package.json        # No need to explain
 └── [editor cfg files]  # Project dependencies and scripts
 ```
-
-### 2. 🧩 Built-in Components
-
-The starter comes with a set of components that you can use to build your site basic structure.
-Ideally, you should use them as a starting point and modify them to fit your needs.
-
-There's only a few of them that are considered **core and generic**:
-
-```bash
-/
-├── components/
-│   └── Logo.astro      # The site logo. Reused across the site, every page has it.
-│   └── Section.astro   # A section with a title, content and an optional image. Is a standard content block that every page has.
-└── └── PageHeader.astro # Used to display the page title and description, intended to bind with the page `mdx` data.
-
-```
-
-Every other component is considered **specific** and is used in the demo site. You can use them as inspiration or modify them to fit your needs.
-
-### 3. 🎨 Theme Customization
-
-The starter comes with a default theme that you can customize to fit your needs.
-There's 3 files involved in the theme customization:
-
-```bash
-/
-├── src/
-│   └── styles/
-│       └── theme.css    # The main theme file, where you can define your colors.
-│   └── config/
-│       └── theme.json    # A JSON file used for theme domain names and font settings. Define your theme color names and font settings here.
-├── tailwind.config.js   # The tailwind configuration file, you know what it is, the other two files are used here.
-```
- 
-
 
 ## 🧞 Commands (by Astro)
 
