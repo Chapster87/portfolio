@@ -128,16 +128,18 @@ const _noindex =
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ5CSVY1HX"></script>
-    <script>
-      // @ts-nocheck
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    {import.meta.env.MODE !== "development" && (
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ5CSVY1HX"></script>
+      <script>
+        // @ts-nocheck
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-DQ5CSVY1HX');
-      // @ts-check
-    </script>
+        gtag('config', 'G-DQ5CSVY1HX');
+        // @ts-check
+      </script>
+    )}
     <!-- Google tag (gtag.js) end --> 
     
     <!-- favicon -->
