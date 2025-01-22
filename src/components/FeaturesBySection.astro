@@ -1,4 +1,7 @@
 ---
+import { markdownify } from "@/lib/utils/textConverter";
+import { undefined } from "astro:schema";
+
 const { feature_data } = Astro.props;
 const { featureSections } = feature_data;
 ---
@@ -6,15 +9,15 @@ const { featureSections } = feature_data;
 <div class="collapse-wrapper">
   <h2>Features & Enhancements - By Section</h2>
   {featureSections.map((group, i) => {
-    const { section, summary, features } = group;
+    const { section, id, summary, features } = group;
     return (
       <>
         {features && features.length > 0 && (
-          <div class="collapse themed collapse-arrow">
+          <div id={id} class="collapse themed collapse-arrow">
             {i === 0 ? (
               <input type="checkbox" aria-labelledby="section-global" checked/>
             ) : (
-              <input type="checkbox" aria-labelledby="section-global" checked/>
+              <input type="checkbox" aria-labelledby="section-global" />
             )}
             
             <h3 id="section-global" class="collapse-title">{section}</h3>
@@ -25,29 +28,46 @@ const { featureSections } = feature_data;
                   const { title, desc } = feature;
                   return (
                     <li>
-                      {title && (<span class="underline">{title}</span>)}
-                      
-                          {(typeof desc !== 'object' && desc !== null) && ( 
-                            <ul>
-                              <li>{desc}</li>
-                            </ul>
-                          )}
-                          {(typeof desc === 'object' && desc !== null) &&  (
-                            <ul style="list-style: lower-latin;">
-                              {desc.map((subFeature, i) => {
-                                const { title, desc } = subFeature;
-                                return (
-                                  <li>
-                                    {title && (<span class="underline">{title}</span>)}
+                      {title && (<span class="underline" set:html={markdownify(title)}/>)}
+                        {(typeof desc !== 'object' && (desc !== null && desc !== undefined)) && ( 
+                          <ul>
+                            <li set:html={markdownify(desc)}/>
+                          </ul>
+                        )}
+                        {(typeof desc === 'object' && (desc !== null && desc !== undefined)) &&  (
+                          <ul style="list-style: lower-latin;">
+                            {desc.map((subFeature, i) => {
+                              const { title, desc } = subFeature;
+                              return (
+                                <li>
+                                  {title && (<span set:html={markdownify(title)}/>)}
+                                  {(typeof desc !== 'object' && (desc !== null && desc !== undefined)) && ( 
                                     <ul>
-                                      <li>{desc}</li>
+                                      <li set:html={markdownify(desc)}/>
                                     </ul>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          )}
-                      
+                                  )}
+                                  {(typeof desc === 'object' && (desc !== null && desc !== undefined)) &&  (
+                                    <ul>
+                                      {desc.map((subSubFeature, i) => {
+                                        const { title, desc } = subSubFeature;
+                                        return (
+                                          <li>
+                                            {title && (<span set:html={markdownify(title)}/>)}
+                                            {desc !== null && desc !== undefined &&  (
+                                              <ul>
+                                                <li set:html={markdownify(desc)}/>
+                                              </ul>
+                                            )}
+                                          </li>
+                                        );
+                                      })}
+                                    </ul>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
                     </li>
                   )
                 })}

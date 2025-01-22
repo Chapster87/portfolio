@@ -94,9 +94,9 @@ const { image_hero, title, url, company, platform, start_date, end_date } = data
       </div>
       <div class="row mb-8">
         <div set:html={markdownify(body)}/>
-        <!-- {(sfccAcceleratorData && sfccAcceleratorData.data) && (
+        {(sfccAcceleratorData && sfccAcceleratorData.data) && (
           <FeaturesBySection feature_data={sfccAcceleratorData.data} />
-        )} -->
+        )}
       </div>
       <div class="row text-center mt-5">
           <a href="/projects" class="link link-primary text-xl font-bold">Back to Projects</a>

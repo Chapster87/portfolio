@@ -1,6 +1,7 @@
 ---
 featureSections:
   - section: 'Global'
+    id: 'global-features'
     features:
       - title: 'Style Guide'
         desc: 'New landing page that offers the ability view global styling as dictated in the client’s style guide. Includes common out of the box site elements. Useful both as a development tool and a reference for the client.'
@@ -23,6 +24,7 @@ featureSections:
           - title: 'Content Carousel'
             desc: 'Used with both Content Asset and HTML type slots render a content carousel.'
   - section: 'Header'
+    id: 'header-features'
     features:
       - title: 'Global Header Layout'
         desc: 'Global Header elements have been added, styled, reformatted, or rearranged in the layout.'
@@ -33,15 +35,20 @@ featureSections:
       - title: 'Mini-Cart Upgrade'
         desc: 'Upgraded to display upon the user adding a product to their cart basket and sorted from most recently added to least recently added. Allows the user to see that the product has been successfully added to the cart as well as a peak at all cart contents, prices, sub-total and promotional text (if configured). OOTB only showed toast message, and products were displayed with most recent last.'
   - section: 'Homepage'
+    id: 'homepage-features'
     features:
       - title: 'Page Designer Template'
         desc: 'Homepage defaulted to using Page Designer as source of content.'
+      - title: '<a href="#pd-types" class="not-prose link link-primary">Page Designer Enhancements</a>'
   - section: 'Category Landing Page (CLP)'
+    id: 'clp-features'
     summary: 'Top level of a category hierarchy. Typically uses stronger use of imagery and merchandising.'
     features:
       - title: 'Breadcrumbs added'
         desc: 'Breadcrumb links added (both mobile & desktop).'
+      - title: '<a href="#pd-types" class="not-prose link link-primary">Page Designer Enhancements</a>'
   - section: 'Product Listing Page (PLP) & Search Results'
+    id: 'plp-features'
     summary: 'Displays a grid of products based on a category or search query.'
     features:
       - title: 'Breadcrumbs added'
@@ -52,12 +59,201 @@ featureSections:
         desc: 'Replaces the hard coded banners using catalog attributes with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
       - title: 'Product Badging'
         desc: 'Allows for the client to use and manage product badging on the product tile and PDP that would otherwise be unavailable out of the box or require a completely custom solution. 4 OOTB basic badges: Sale, New, Best Seller, Custom. COnfigurable hierarchy to allow badges to be displayed in order of importance.'
-  - section: 'Quickview'
+      - title: 'Product Compare (Feature Toggle)'
+        desc: 'Code changes required for this feature added so that the Salesforce product compare feature can be enabled/disabled via site preference after cartridge is uploaded and added to cartridge path.'
+      - title: 'Results Pagination (Feature Toggle)'
+        desc: 'Pagination at the bottom of results pages can be toggled within a custom site preference to use one of the following: OOTB “More Results” CTA button, Page Number Links, Infinite Scroll'
+      - title: 'Search Refinements'
+        desc:
+          - title: 'UX Improvements'
+            desc: 'Allow expanding/collapsing of the refinements. "Size" refinement updated to be more visually appealing.'
+          - title: 'Color Refinement Improvement'
+            desc: 'Choosing color refinement changes all product tile variations to match selected color.'
+          - title: '"Back" History'
+            desc: 'This enhancement also allows the user to make refinement selections, view a PDP, use the device’s “Back” button to return to the results and the refined results remain with the selected refinements saved.'
+      - title: '<a href="#pd-types" class="not-prose link link-primary">Page Designer Enhancements</a>'
   - section: 'PDP'
-  - section: 'Cart'
+    id: 'pdp-features'
+    features:
+      - title: 'PDP Product Image Gallery'
+        desc: 'Changed to use Swiper.js for thumbnails and main image'
+      - title: 'PDP Product Image Zoom'
+        desc: 'Zoom on hover (large device only) over product image(s) configured.'
+      - title: 'Lazy Load Images'
+        desc: 'Adds functionality for images to first load a smaller version of an image and then initialize the larger intended image which is intended to contribute to efficiencies in page loading performance.'
+      - title: 'Product Badging'
+        desc: 'Product badging feature that offers flexibility for the client to use and manage product badges within Business Manager that will display on the product'
+      - title: '<a href="#pd-types" class="not-prose link link-primary">Page Designer Enhancements</a>'
   - section: 'Checkout'
+    id: 'checkout-features'
+    features:
+      - title: 'Order Confirmation Page Banner Slot'
+        desc: 'Replaces the hard coded banners using catalog attributes with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
   - section: 'My Account'
+    id: 'account-features'
+    features:
+      - title: 'Page Breadcrumbs'
+        desc: 'Breadcrumbs added to all pages (both mobile & desktop).'
+      - title: 'Page Banner Slot'
+        desc: 'Replaces the hard coded banners with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
+      - title: 'Wish List & Gift Registry'
+        desc: 'Site preference to enable/disable the Salesforce wish list and gift registry features reflected within My Account.'
   - section: 'Store Locator'
+    id: 'store-locator-features'
+    features:
+      - title: 'Page Banner Slot'
+        desc: 'Replaces the hard coded banners with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
   - section: 'Error Pages'
+    id: 'error-features'
+    features:
+      - title: 'Page Banner Slot'
+        desc: 'Replaces the hard coded banners with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
   - section: 'Content & Content Pages'
+    id: 'content-features'
+    features:
+      - title: 'Page Banner Slot'
+        desc: 'Replaces the hard coded banners with content slots, which take advantage of merchandising techniques such as schedule and customer groups.'
+      - title: '<a href="#pd-types" class="not-prose link link-primary">Page Designer Enhancements</a>'
+  - section: 'Page Designer - Page Types'
+    id: 'pd-types'
+    features:
+      - title: 'Type: Component'
+        desc: 'Used to define a component that can be shown on multiple pages. Intention is to be able to create reusable content for use on multiple pages without having to recreate for each page. Once the component is created, the component ID will be called upon in a component-include so that it is has the ability to be referenced for use on other pages'
+      - title: 'Type: Storefront Page'
+        desc: 
+          - title: 'Page layout type for rendering a standard page. It is the main template used for generic landing pages. Includes:'
+            desc: 
+              - title: '1 full-width region, that can be used with nearly all components and layouts'
+              - title: 'full-width components utilize full-width and are stacked vertically'
+      - title: 'Type: Product List Page (PLP)'
+        desc: 
+          - title: 'Page layout type for rendering a page that includes the standard product grid, with the addition of defined custom content.  Content can be defined for use at a category level, or limited to a single page through the use of a custom naming convention. Includes:'
+            desc: 
+              - title: '1 region above Product Grid, pre-loaded with Dynamic Category Banner on new pages'
+              - title: '1 region containing Product Grid, Product Grid components pre-loaded on new pages'
+              - title: '1 region below Product Grid'
+              - title: 'full-width components utilize full-width and are stacked vertically.'
+      - title: 'Type: Product Detail Page (PDP)'
+        desc: 
+          - title: "Page layout type for rendering a page that includes the standard product display page, with the addition of defined custom content. Content can be defined for use at a category level and applied to all products assigned to that category, or limited to a single product's page through the use of a 'pdp-' naming convention. Includes:"
+            desc: 
+              - title: '3 full-width regions, that can be used with nearly all components and layouts'
+              - title: 'Top region defaults to containing Product Detail layout, Product Detail layout components pre-loaded on new pages'
+              - title: 'full-width components utilize full-width and are stacked vertically'
+  - section: 'Page Designer - Layouts'
+    id: 'pd-layouts'
+    features:
+      - title: '1 Row x 1 Col (Mobile, Desktop) Layout'
+        desc:
+          - title: 'Utilizes 1 row in 1 column for including 1 asset object that spans 100% width.'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: '2 Row x 1 Col (Mobile), 1 Row x 2 Col (Desktop) Layout'
+        desc:
+          - title: 'Mobile: utilizes 2 rows in 1 column for including 2 asset objects (1 per row) that each stack to take 100% width on mobile'
+          - title: 'Desktop: utilizes 1 row with 2 columns for including 2 asset objects (1 per column) that each span 50% (or as otherwise selected) width on desktop'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+          - title: 'Additional option for defining column width split. Default is 50%/50%. Other options include 33%/66%, 66%/33%, 25%/75%, 75%/25%.'
+      - title: '2 Row x 2 Col (Mobile), 1 Row x 4 Col (Desktop) Layout'
+        desc:
+          - title: 'Mobile: utilizes 2 rows in 2 columns for including 4 asset objects (2 per row) that each span 50% width on mobile'
+          - title: 'Desktop: utilizes 1 row with 4 columns for including 4 asset objects (1 per column) that each span 25% width on desktop'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: '2 Row x 3 Col (Mobile), 1 Row x 6 Col (Desktop) Layout'
+        desc:
+          - title: 'Mobile: utilizes 2 rows in 3 columns for including 6 asset objects (3 per row) that each span 33% width on mobile'
+          - title: 'Desktop: utilizes 1 row with 6 columns for including 6 asset objects (1 per column) that each span 16% width on desktop'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: '3 Row x 1 Col (Mobile), 1 Row x 3 Col (Desktop) Layout'
+        desc:
+          - title: 'Mobile: utilizes 3 rows in 1 column for including 3 asset objects (1 per row) that each span 100% width on mobile'
+          - title: 'Desktop: utilizes 1 row in 3 columns for including 3 asset objects (1 per column) that each span 33% width on desktop'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: '3 Row x 2 Col (Mobile), 2 Row x 3 Col (Desktop) Layout'
+        desc:
+          - title: 'Mobile: utilizes 3 rows in 2 columns for including 6 asset objects (2 per row, 1 per column) that each span 50% width on mobile'
+          - title: 'Desktop: utilizes 2 rows in 3 columns for including 6 asset objects (3 per row, per column) that each span 33% width on desktop'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: 'Carousel'
+        desc:
+          - title: "Creates a row that natively uses the site's global slider functionality to place any asset objects included within in a carousel/slider utility."
+          - title: 'Number of slides, arrow visibility, and dots visibility configurable for each breakpoint'
+          - title: 'Slide Edit Mode - disables slider for choosing and editing each slider within PD interface'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: 'Image Gallery'
+        desc:
+          - title: 'Organizes a responsive grid of "Image Tile" components.'
+          - title: 'Options added to define anchor ID, designate full-width, gallery title, and number of images per row (desktop).'
+      - title: 'Infinite Row'
+        desc:
+          - title: 'Utilizes 1 row for including an infinite number of asset components. Wraps objects as needed for mobile, otherwise will keep items on the same row. All included asset components will expand evenly to cover the width of the viewport.'
+          - title: 'Options added to define anchor ID, designate full-width, and set background color.'
+      - title: 'Nav Row'
+        desc:
+          - title: 'Layout used with the navigation components: "Anchor Link", "Anchor Link w/Image", "Nav Link", & "Nav Link w/Image" to create a navigation bar.'
+          - title: 'Options added to define tile above nav, anchor ID, designate full-width, and set background color.'
+      - title: 'Popular Categories'
+        desc: 
+          - title: 'A layout used to create links to designated categories.'
+          - title: 'Options added to define heading text, anchor ID, designate full-width, and set background color.'
+  - section: 'Page Designer - Assets (Components)'
+    id: 'pd-assets'
+    features:
+      - title: 'Commerce Components'
+        desc:
+          - title: 'This is the standard list of Page Designer components. This includes OOTB components as well as custom architected components.'        
+          - title: '<span class="underline">Anchor Link</span>'
+            desc: 'Creates an anchor link to another section of the same page and is to be used specifically with the Nav Row layout component.'
+          - title: '<span class="underline">Anchor Link (w/ Image)</span>'
+            desc: 'Creates an anchor link to another section of the same page and is to be used specifically with the Nav Row layout component, and includes the option to include an image.'
+          - title: '<span class="underline">Breadcrumbs</span>'
+            desc:
+              - title: "Renders manually defined breadcrumbs. Styles are dictated by the site's global breadcrumbs styling"
+              - title: '"Home" breadcrumb renders by default. Renders up to 4 levels of breadcrumbs'
+          - title: '<span class="underline">Button</span>'
+            desc: ' Basic button component useful for site navigation in all content areas'
+          - title: '<span class="underline">Content Tile</span>'
+            desc:
+              - title: 'Renders a container with a Title and Image and the option to link the content.'
+              - title: 'Options added to define image, title, link, and set order of elements (Image First, Text Second || Text First, Image Second)'
+              - title: 'Sub-region capable of accepting other components. i.e. Button'
+          - title: '<span class="underline">Main Banner</span>'
+            desc: 'Renders a full-width container to display a banner using a defined image, with a block of text and CTA button(s) below - and the flexibility to have text overlay the image and manipulate the placement.'
+          - title: '<span class="underline">Image Tile</span>'
+            desc: 'A simple tile container to hold a linkable image.'
+          - title: '<span class="underline">Image with Text</span>'
+            desc:
+              - title: 'Renders a defined image, with a block of text.'
+              - title: 'With option toggled, text can overlay image, and placement can be manipulated.'
+              - title: "Includes a sub-region below text capable of accepting other components. i.e. Button"
+          - title: '<span class="underline">Nav Link</span>'
+            desc: 'Creates a navigation link to another page. To be used with "Nav Row" layout specifically.'
+          - title: '<span class="underline">Nav Link (w/ Image)</span>'
+            desc: 'Creates a navigation link to another page. To be used with "Nav Row" layout specifically. Offers the option to include an image.'
+          - title: '<span class="underline">Product Tile</span>'
+            desc: 'Renders a product tile based on defined product ID. Styling matches global product tiles.'
+          - title: '<span class="underline">Spacer</span>'
+            desc: 'Component used to increase the vertical and/or horizontal space between 2 components.'
+          - title: '<span class="underline">Textbox</span>'
+            desc: 'Renders defined text with a container.'
+      - title: 'Dynamic Components'
+        desc:
+          - title: 'These components have a dynamic nature to them, meaning that they are inheriting some of their data from Business Manager attributes, or catalog/product data. <span class="italic">Examples: Product Grid, PDP Layout, Category Banner</span>' 
+          - title: '<span class="underline">Dynamic Category Banner</span>'
+            desc: 
+              - title: 'Renders a category banner, based on defined category ID. Uses category attributes to populate the banner.'
+              - title: 'Allows manual override within component for all attributes.'
+              - title: 'Includes a sub-region below text capable of accepting other components. i.e. Button'
+          - title: '<span class="underline">Dynamic Product Detail Layout</span>'
+            desc: 'Renders the default markup of the designated PDP ID page shopping section. i.e. Product Image Carousel, Name, Price, SKU, Attributes, Add to Cart, etc.'
+          - title: '<span class="underline">Dynamic Product Listing Layout</span>'
+            desc: 'Renders the default product tile grid of the defined category ID. '
+      - title: 'Einstein Components'
+        desc:
+          - title: 'These components populate their data from configured recommenders from within Einstein.'
+          - title: '<span class="underline">Einstein Carousel: Recently Viewed</span>'
+            desc: "Configurable and flexible recommendation carousel to display the user's most recently viewed products."
+          - title: '<span class="underline">Einstein Carousel: Category</span>'
+            desc: 'Configurable and flexible recommendation carousel to display a pre-configured Einstein recommender based on category.'
+          - title: '<span class="underline">Einstein Carousel: Product</span>'
+            desc: 'Configurable and flexible recommendation carousel to display a pre-configured Einstein recommender based on a product.'
 ---
