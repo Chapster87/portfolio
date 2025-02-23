@@ -28,13 +28,13 @@ Insert short desc
 2. **Install dependencies:**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Start the development server:**
 
    ```bash
-    npm run dev
+    pnpm run dev
     ```
 
 4. **Open your browser and visit [http://localhost:4321](http://localhost:4321)**

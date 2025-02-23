@@ -81,11 +81,6 @@ const projectsPage = defineCollection({
           z.object({
             content_id: z.string(),
           }),
-        ),
-        other_projects: z.array(
-          z.object({
-            content_id: z.string(),
-          }),
         )
       })
     }),
