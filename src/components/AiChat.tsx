@@ -1,6 +1,8 @@
+export const prerender = false;
+
 import { useChat } from '@ai-sdk/react';
 
-export default function Chat() {
+export default function AiChatPanel() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     headers: { 'Content-Type': 'application/json' },
   });

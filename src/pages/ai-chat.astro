@@ -1,6 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro";
-import AiChat from "@/components/AiChat";
+import AiChatPanel from "@/components/AiChat";
 ---
 
 <Base entry_keys={['projects', 'index']}>
@@ -8,7 +8,7 @@ import AiChat from "@/components/AiChat";
     <div class="container">
       <div class="row">
         <h2 class="section-title">AI Chat</h2>
-        <AiChat client:only="react"/>
+        <AiChatPanel client:only="react"/>
       </div>
     </div>
     

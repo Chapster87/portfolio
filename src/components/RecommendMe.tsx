@@ -230,9 +230,9 @@ export default function RecommendMe() {
     <div className='col-12'>
       <div className="row prose dark:prose-invert max-w-full">
         <div className="col-12 mb-4">
-          <p class="text-lg font-bold mb-2">Still on the fence about hiring me? Don't take my word for it. Ask the AI!</p>
+          <p className="text-lg font-bold mb-2">Still on the fence about hiring me? Don't take my word for it. Ask the AI!</p>
           <p>Clicking the button below will trigger the Ai provider to analyze my resume information and provide recommendations as to why I would be a great member of your team.</p>
-          <p class="text-lg font-bold mb-2">AI (LLM) Stack:</p>
+          <p className="text-lg font-bold mb-2">AI (LLM) Stack:</p>
           <ul>
             <li><a href="https://sdk.vercel.ai/" target="_blank" rel="noopener noreferrer nofollow">AI SDK by Vercel</a></li>
             <li>Provider: <a href="https://groq.com/" target="_blank" rel="noopener noreferrer nofollow">Groq</a></li>
