@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
     model: groq('llama-3.3-70b-versatile'),
     system:
     `Act as a job recruiter looking for high level software engineer candidates. ` +
-    `Analyze the provided data and respond with reasons why this applicant would be a good hire.`,
+    `Analyze the provided data and respond with reasons why this applicant would be an excellent hire.`,
     prompt,
   });
 

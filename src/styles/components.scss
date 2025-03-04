@@ -229,3 +229,17 @@ svg[class="feather-icon"] {
     margin-bottom: 0;
   }
 }
+
+.mockup-code {
+  pre {
+    @apply px-[22px] whitespace-pre-line before:hidden flex;
+  }
+
+  .prefix {
+    @apply opacity-50;
+  }
+
+  .code {
+    @apply block px-[18px];
+  }
+}

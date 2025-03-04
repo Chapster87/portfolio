@@ -1,16 +1,14 @@
 ---
 import Base from "@/layouts/Base.astro";
-import RecommendMe from "@/components/RecommendMe";
+import AiChat from "@/components/AiChat";
 ---
 
 <Base entry_keys={['projects', 'index']}>
   <section class="mt-4 lg:mt-6 pb-6">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">AI Recommendation</h2>
-          <RecommendMe client:only="react"/>
-        </div>
+        <h2 class="section-title">AI Chat</h2>
+        <AiChat client:only="react"/>
       </div>
     </div>
     

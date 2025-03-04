@@ -8,4 +8,12 @@ body {
   background-color: #ffffff;
   background-color: transparent;
   background-image: url("/images/asfalt-dark.webp");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+main {
+  @apply flex-1;
 }
