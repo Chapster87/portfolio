@@ -11,7 +11,7 @@ const groq = createGroq({
 });
 
 export const POST: APIRoute = async ({ request }) => {
-  const { prompt }: { prompt: string } = await request.json();
+  const { prompt }: { system: string, prompt: string } = await request.json();
 
   const result = streamText({
     model: groq('llama-3.3-70b-versatile'),

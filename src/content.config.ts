@@ -25,6 +25,9 @@ const indexPage = defineCollection({
           resume_url: z.string()
         }),
       }),
+      about_me: z.object({
+        summary: z.string()
+      }),
       education: z.object({
         school: z.string(),
         logo: z.string(),
@@ -96,6 +99,10 @@ const sfccAcceleratorData = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/sfccAccelerator" }),
 });
 
+const aiData = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/ai" }),
+});
+
 // Export collections
 export const collections = {
   pages: pagesCollection,
@@ -103,7 +110,8 @@ export const collections = {
   workExp: workExpData,
   projects: projectsPage,
   projectsContent: projectsContent,
-  sfccAcceleratorData: sfccAcceleratorData
+  sfccAcceleratorData: sfccAcceleratorData,
+  aiData: aiData
 };
 
 

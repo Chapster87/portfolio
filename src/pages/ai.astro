@@ -1,15 +1,19 @@
 ---
 import Base from "@/layouts/Base.astro";
 import RecommendMe from "@/components/RecommendMe";
+import { getEntry } from "astro:content";
+
+const homepage = await getEntry('homepage', 'index');
+const employment = await getEntry('workExp', 'index');
 ---
 
-<Base entry_keys={['projects', 'index']}>
+<Base entry_keys={['aiData', 'recommend']}>
   <section class="mt-4 lg:mt-6 pb-6">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title">AI Recommendation</h2>
-          <RecommendMe client:only="react"/>
+          <h2 class="section-title">AI Resume Analysis</h2>
+          <RecommendMe homepageData={homepage.data} employmentData={employment.data} client:only="react"/>
         </div>
       </div>
     </div>

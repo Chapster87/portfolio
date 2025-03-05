@@ -9,7 +9,7 @@ import Base from "@/layouts/Base.astro";
 import { getEntry } from "astro:content";
 
 const homepage = await getEntry('homepage', 'index');
-const { hero, education, certifications, skills } = homepage && homepage.data;
+const { hero, about_me, education, certifications, skills } = homepage && homepage.data;
 const employment = await getEntry('workExp', 'index');
 const { employment_history } = employment && employment.data;
 ---
@@ -39,7 +39,7 @@ const { employment_history } = employment && employment.data;
             About Me
           </h2>
           <div class="collapse-content px-0 md:px-5">
-            <AboutMe />
+            <AboutMe aboutMeData={about_me} />
           </div>
         </section>
       </div>

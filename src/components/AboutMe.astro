@@ -1,10 +1,10 @@
 ---
-
+const { aboutMeData } = Astro.props;
 ---
 
 <div class="prose dark:prose-invert max-w-full">
   <p class="text-lg font-bold mb-2">TL;DR (a.k.a Resume version)</p>
-  <p>Senior Software Engineer with expertise spanning over 15 years, adept at leading innovative site implementations for high-profile clients. Leverages a unique blend of web development skills, graphic design, and advanced communication to seamlessly connect client visions with full-stack development execution. Passionate about continuous learning, consistently researching new frameworks and techniques to elevate project outcomes.</p>
+  <p>{aboutMeData.summary}</p>
   <div class="mt-4">
     <p class="text-lg font-bold mb-2">...now that that's out of the way.</p>
     <p>Hi, I'm Andy! I live with my wife, Hannah, and my two giant dogs, Mance & Beorn, in the city of champions - Pittsburgh, PA. While I can nerd it up with the best of them<sup>1</sup>, I find plenty of time away from the computer. I've been an athlete all my life. Since 2009, I have been spending my Saturdays <a href="https://www.youtube.com/watch?v=ywq7FNH0Bwc" target="_blank" rel="noopener noreferrer nofollow">bashing heads</a> (including my own) playing competitive rugby. Recently, I have been spending time with a clipboard in my hand, embracing the coaching side of things for my rugby club, the <a href="https://www.pghrugby.com" target="_blank">Pittsburgh Forge Rugby Club</a><sup>2</sup>. It's been a great experience, and a natural transition as my playing days dwindle. Despite my aging body's protests, I still try to put the boots on every weekend and compete with teams all over the midwest.</p>
