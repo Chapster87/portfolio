@@ -1,0 +1,22 @@
+---
+import Base from "@/layouts/Base.astro";
+import GenerateCoverLetter from "@/components/GenerateCoverLetter";
+import { getEntry } from "astro:content";
+
+const homepage = await getEntry('homepage', 'index');
+const employment = await getEntry('workExp', 'index');
+---
+
+<Base entry_keys={['aiData', 'cover-letter']}>
+  <section class="mt-4 lg:mt-6 pb-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">AI Generate Cover Letter</h2>
+          <GenerateCoverLetter homepageData={homepage.data} employmentData={employment.data} client:only="react"/>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</Base>
