@@ -1,17 +1,18 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Merriweather_Sans } from "next/font/google"
 import Header from "@/components/header"
 import BreakpointIndicator from "@components/breakpoint-indicator"
 import "@styles/globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 })
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const merriweatherSans = Merriweather_Sans({
+  variable: "--font-merriweather-sans",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
 })
 
 export const metadata: Metadata = {
@@ -25,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${merriweatherSans.variable}`}
+    >
       <body data-theme="light">
         <BreakpointIndicator />
         <Header />

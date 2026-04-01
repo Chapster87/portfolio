@@ -9,9 +9,6 @@ export default function Logo({ showText = true }) {
         <SiteLogo />
         {showText && <p className={s.logoText}>Andy Chapman</p>}
       </Link>
-      <svg className="feather-icon" width="26" height="26">
-        <use href="../feather-sprite.svg#thumbs-up" />
-      </svg>
     </>
   )
 }

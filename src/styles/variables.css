@@ -16,6 +16,8 @@
   --color-green: #00b140;
   --color-blue: #377cfb;
 
+  --color-primary: var(--color-green);
+
   --color-success: #198754;
   --color-warning: var(--color-gold);
   --color-danger: var(--color-red);
@@ -37,6 +39,8 @@
 
 /* @media (prefers-color-scheme: dark) { */
 [data-theme="dark"] {
+  --color-primary: var(--color-blue);
+
   --background: var(--color-black);
   --foreground: var(--color-white);
 }
