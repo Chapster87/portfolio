@@ -1,3 +1,7 @@
+# BAM! Portfolio Site - Andy Chapman
+![https://astro.build/](https://img.shields.io/badge/next.js-16.2.1-black?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![https://www.typescriptlang.org/](https://img.shields.io/badge/typescript-5.0.0-blue?style=for-the-badge&logo=typescript&link=https%3A%2F%2Fwww.typescriptlang.org%2F)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

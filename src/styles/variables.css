@@ -1,7 +1,4 @@
 :root {
-  --font-noto-sans: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-oswald: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   --color-white: #ffffff;
   --color-grey-100: #f8f9fa;
   --color-grey-200: #e9ecef;
@@ -14,23 +11,12 @@
   --color-grey-900: #222222;
   --color-black: #000000;
 
-  --color-gold-100: #fff7e0;
-  --color-gold-200: #ffecb5;
-  --color-gold-300: #ffe289;
-  --color-gold-400: #ffd75e;
-  --color-gold-500: #ffcc32;
-  --color-gold-600: #ffc107;
-  --color-gold-700: #d29f06;
-  --color-gold-800: #a67d05;
-  --color-gold-900: #795c03;
-
   --color-gold: #ffb81c;
-
   --color-red: #c60c30;
-  --color-green: #198754;
+  --color-green: #00b140;
   --color-blue: #377cfb;
 
-  --color-success: var(--color-green);
+  --color-success: #198754;
   --color-warning: var(--color-gold);
   --color-danger: var(--color-red);
   --color-info: var(--color-blue);
@@ -41,4 +27,16 @@
   --color-background-light: var(--color-white);
 
   --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --background: var(--color-white);
+  --foreground: var(--color-black);
+
+  --text-primary: #000;
+  --text-secondary: #666;
+}
+
+/* @media (prefers-color-scheme: dark) { */
+[data-theme="dark"] {
+  --background: var(--color-black);
+  --foreground: var(--color-white);
 }
