@@ -9,6 +9,7 @@ type LinkProps = {
   href: string
   variant?: "primary" | "secondary"
   size?: "small" | "default" | "large"
+  shape?: "standard" | "square" | "circle"
   className?: string
   openInNewTab?: boolean
   buttonStyle?: boolean
@@ -19,6 +20,7 @@ const Link: React.FC<LinkProps> = ({
   href,
   variant = "primary",
   size = "default",
+  shape = "standard",
   className,
   openInNewTab = false,
   buttonStyle = false,
@@ -26,7 +28,12 @@ const Link: React.FC<LinkProps> = ({
 }) => {
   const classes = clsx(
     buttonStyle
-      ? [buttonStyles.base, buttonStyles[variant], buttonStyles[size]]
+      ? [
+          buttonStyles.base,
+          buttonStyles[variant],
+          buttonStyles[size],
+          buttonStyles[shape],
+        ]
       : s.link,
     className
   )

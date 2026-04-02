@@ -6,6 +6,7 @@ type ButtonProps = {
   onClick?: () => void
   variant?: "primary" | "secondary"
   size?: "small" | "default" | "large"
+  shape?: "standard" | "square" | "circle"
   disabled?: boolean
   className?: string
   isLoading?: boolean
@@ -19,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   variant = "primary",
   size = "default",
+  shape = "standard",
   disabled = false,
   isLoading = false,
   className,
@@ -33,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
         s.base,
         s[variant],
         s[size],
+        s[shape],
         disabled && s.disabled,
         isLoading && s.loading,
         className,
