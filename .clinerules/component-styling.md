@@ -56,7 +56,7 @@ These are as follows:
 
 ## Spacing and measurements
 
-- Use pixel (px) values that are divisible by 8 (e.g., 8px, 16px, 24px, 32px, 40px, 48px)
+- Use pixel (px) values that are divisible by 4 (e.g., 4px, 8px, 12px, 16px, 24px, 32px, 40px)
 - For finer adjustments, use values that are multiples of 8 (e.g., 4px, 12px, 20px)
 - Maintain consistent spacing throughout the application by adhering to this 8px grid system
 

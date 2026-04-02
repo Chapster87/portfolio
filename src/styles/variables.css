@@ -36,6 +36,11 @@
 
   --text-primary: #000;
   --text-secondary: #666;
+
+  --background-overlay: rgba(255, 255, 255, 0.4);
+
+  --box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -44,4 +49,6 @@
 
   --background: var(--color-black);
   --foreground: var(--color-white);
+
+  --background-overlay: rgba(32, 32, 32, 0.4);
 }
