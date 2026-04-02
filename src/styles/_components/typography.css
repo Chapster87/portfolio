@@ -10,8 +10,8 @@ h5,
 .h5,
 h6,
 .h6 {
-  /* font-family: var(--font-oswald); */
-  font-weight: 500;
+  font-family: var(--font-inter);
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   line-height: 1.2;
 
@@ -22,34 +22,55 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2.5rem;
+  font-size: 36px;
+
+  @media (--viewport-lg-up) {
+    font-size: 48px;
+  }
 }
 
 .h1-lg {
-  font-size: 3rem;
+  font-size: 32px;
+
+  @media (--viewport-lg-up) {
+    font-size: 64px;
+  }
 }
 
 h2,
 .h2 {
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: 30px;
+
+  @media (--viewport-lg-up) {
+    font-size: 36px;
+  }
 }
 
 h3,
 .h3 {
-  font-size: 1.125rem;
+  font-size: 24px;
+
+  @media (--viewport-lg-up) {
+    font-size: 30px;
+  }
 }
 
 h4,
 .h4 {
-  font-size: 1.1em;
+  font-size: 20px;
+
+  @media (--viewport-lg-up) {
+    font-size: 24px;
+  }
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 18px;
+
+  @media (--viewport-lg-up) {
+    font-size: 20px;
+  }
 }
 
 p {

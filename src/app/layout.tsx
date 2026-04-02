@@ -3,6 +3,7 @@ import { Inter, Merriweather_Sans } from "next/font/google"
 import Header from "@/components/header"
 import BreakpointIndicator from "@components/breakpoint-indicator"
 import "@styles/globals.css"
+import s from "./styles.module.css"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,7 +34,7 @@ export default function RootLayout({
       <body data-theme="light">
         <BreakpointIndicator />
         <Header />
-        {children}
+        <main className={s.main}>{children}</main>
       </body>
     </html>
   )
