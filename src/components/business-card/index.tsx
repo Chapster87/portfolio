@@ -1,21 +1,22 @@
 import Image from "next/image"
 import Heading from "@components/typography/heading"
 import Link from "@components/link"
+import { BusinessCardData } from "@/types/business-card"
 
 import s from "./styles.module.css"
 
-import resume from "@data/resume"
+interface BusinessCardProps {
+  data: BusinessCardData
+}
 
-const { businessCard } = resume
-
-export default function BusinessCard() {
+export default function BusinessCard({ data }: BusinessCardProps) {
   return (
     <div className={s.businessCard}>
       <div className={s.photo}>
         <Image
           className={s.headshot}
-          src={businessCard.image}
-          alt={businessCard.name}
+          src={data.image}
+          alt={data.name}
           width={256}
           height={256}
         />
@@ -23,17 +24,17 @@ export default function BusinessCard() {
       <div className={s.info}>
         <div className={s.nameTitle}>
           <Heading level="h2" className={s.name}>
-            {businessCard.name}
+            {data.name}
           </Heading>
           <Heading level="h3" display="h5" className={s.title}>
-            {businessCard.title}
+            {data.title}
           </Heading>
         </div>
         <div className={s.actions}>
           <div className={s.actionsSecondary}>
             <Link
               className={s.actionLink}
-              href={businessCard.action_urls.linkedin_url}
+              href={data.action_urls.linkedin_url}
               openInNewTab={true}
               buttonStyle={true}
               variant="secondary"
@@ -47,7 +48,7 @@ export default function BusinessCard() {
             </Link>
             <Link
               className={s.actionLink}
-              href={businessCard.action_urls.github_url}
+              href={data.action_urls.github_url}
               openInNewTab={true}
               buttonStyle={true}
               variant="secondary"
@@ -61,7 +62,7 @@ export default function BusinessCard() {
             </Link>
             <Link
               className={s.actionLink}
-              href={`mailto:${businessCard.action_urls.email}`}
+              href={`mailto:${data.action_urls.email}`}
               buttonStyle={true}
               variant="secondary"
               shape="square"
@@ -74,7 +75,7 @@ export default function BusinessCard() {
           </div>
           <Link
             className={s.resumeLink}
-            href={businessCard.action_urls.resume_url}
+            href={data.action_urls.resume_url}
             openInNewTab={true}
             buttonStyle={true}
             variant="primary"

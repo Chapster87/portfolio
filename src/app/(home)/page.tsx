@@ -1,15 +1,19 @@
+import Heading from "@/components/typography/heading"
 import Text from "@/components/typography/text"
 import Link from "@/components/link"
 import BusinessCard from "@/components/business-card"
 import ValuePropsCounter from "@/components/value-props-counter"
-
 import s from "./styles.module.css"
+
+import resume from "@data/resume"
+
+const { businessCard } = resume
 
 export default function Home() {
   return (
     <div className={s.page}>
-      <div className={s.pageTop}>
-        <BusinessCard />
+      <section className={s.pageTop}>
+        <BusinessCard data={businessCard} />
         <ValuePropsCounter
           counter={[
             {
