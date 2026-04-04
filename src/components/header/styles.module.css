@@ -38,7 +38,8 @@
   padding: 16px 0;
   background-color: var(--background);
   background-color: rgb(249, 250, 251, 0.4);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
+  z-index: 50;
 }
 
 .headerInner {

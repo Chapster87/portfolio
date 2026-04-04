@@ -7,8 +7,9 @@ import SectionAccordion from "./_components/section-accordion"
 import s from "./styles.module.css"
 
 import resume from "@data/resume"
+import { type ResumeData } from "@customTypes/resume-data"
 
-const { businessCard, aboutMe } = resume
+const { businessCard, aboutMe } = resume as ResumeData
 
 export default function Home() {
   return (

@@ -26,7 +26,8 @@
       "@public/*": ["./public/*"],
       "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/styles/*"],
-      "@svg/*": ["./src/svg/*"]
+      "@svg/*": ["./src/svg/*"],
+      "@customTypes/*": ["./src/types/*"]
     }
   },
   "include": [
