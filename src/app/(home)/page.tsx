@@ -3,11 +3,12 @@ import Text from "@/components/typography/text"
 import Link from "@/components/link"
 import BusinessCard from "@/components/business-card"
 import ValuePropsCounter from "@/components/value-props-counter"
+import SectionAccordion from "./_components/section-accordion"
 import s from "./styles.module.css"
 
 import resume from "@data/resume"
 
-const { businessCard } = resume
+const { businessCard, aboutMe } = resume
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           counter={[
             {
               name: "Years of Experience",
-              number: 15,
+              number: 16,
               icon: "plus",
             },
             {
@@ -45,7 +46,34 @@ export default function Home() {
           </Link>{" "}
           calculating of total lines of code in 2020, probably wildly inaccurate
         </Text>
-      </div>
+      </section>
+      <SectionAccordion
+        id="about-me"
+        className={s.pageSection}
+        title="About Me"
+        icon={
+          <svg className="feather-icon" width="26" height="26">
+            <use href="/feather-sprite.svg#thumbs-up" />
+          </svg>
+        }
+      >
+        {aboutMe.subtitle}
+        {aboutMe.summary}
+        {aboutMe.longStory}
+      </SectionAccordion>
+
+      <SectionAccordion
+        id="work-experience"
+        className={s.pageSection}
+        title="Work Experience"
+        icon={
+          <svg className="feather-icon" width="26" height="26">
+            <use href="/feather-sprite.svg#briefcase" />
+          </svg>
+        }
+      >
+        <Text>full-stack developer with a passion for creating</Text>
+      </SectionAccordion>
     </div>
   )
 }

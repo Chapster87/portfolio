@@ -78,21 +78,13 @@ p {
 }
 
 a {
-  color: var(--color-grey-900);
+  color: var(--color-primary);
   text-decoration: underline;
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--color-grey-800);
+    color: var(--color-blue-ada);
     text-decoration: none;
-  }
-
-  .light & {
-    color: var(--color-gold);
-
-    &:hover {
-      color: var(--color-gold-400);
-    }
   }
 }
 

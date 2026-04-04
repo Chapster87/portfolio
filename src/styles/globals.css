@@ -1,6 +1,7 @@
 @import "./variables.css";
 @import "./grid.css";
 @import "./_components/typography.css";
+@import "./_components/prose.css";
 
 html {
   height: 100%;

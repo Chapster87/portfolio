@@ -21,6 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@data/*": ["./src/data/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@public/*": ["./public/*"],
       "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/styles/*"],

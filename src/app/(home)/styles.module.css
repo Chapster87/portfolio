@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  gap: 24px;
+
+  @media (--viewport-md-up) {
+    gap: 40px;
+  }
 }
 
 .pageTop {
@@ -26,4 +31,16 @@
   @media (--viewport-md-up) {
     font-size: 16px;
   }
+}
+
+.pageSection {
+  composes: global-grid-container from global;
+  background-color: var(--background-overlay);
+}
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
 }
