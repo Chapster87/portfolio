@@ -2,23 +2,26 @@ import {
   type Employment,
   type EmploymentPosition,
 } from "@customTypes/resume-data"
+import Heading from "@/components/typography/heading"
+import Text from "@/components/typography/text"
 import Timeline from "@/components/timeline"
 import clsx from "clsx"
 import s from "./styles.module.css"
 
 interface PositionItemProps {
   position: EmploymentPosition
-  isLastPosition: boolean
 }
 
-function PositionItem({ position, isLastPosition }: PositionItemProps) {
+function PositionItem({ position }: PositionItemProps) {
   const { title, start_date, end_date, notes } = position
   return (
-    <div
-      className={`${s.employmentPosition} ${!isLastPosition ? s.marginBottomSmall : ""}`}
-    >
+    <div className={s.employmentPosition}>
       <div className={s.positionHeader}>
-        {title && <div className={s.positionTitle}>{title}</div>}
+        {title && (
+          <Heading className={s.positionTitle} level="h4" display="h5">
+            {title}
+          </Heading>
+        )}
         {(start_date || end_date) && (
           <div className={s.badgeNeutral}>
             <span className={s.badgeIcon}>
@@ -34,7 +37,7 @@ function PositionItem({ position, isLastPosition }: PositionItemProps) {
         )}
       </div>
       {notes && notes.length > 0 && (
-        <ul className={s.notesList}>
+        <ul className={`prose ${s.notesList}`}>
           {notes.map((note, noteIndex) => (
             <li key={noteIndex}>{note}</li>
           ))}
@@ -51,36 +54,36 @@ interface EmploymentItemProps {
 function EmploymentItem({ job }: EmploymentItemProps) {
   const { employer, location, remote, positions } = job
   return (
-    <div className={`${s.employmentItem}`}>
+    <div className={s.employmentItem}>
       <div className={s.employer}>
         {employer && (
-          <div
+          <Heading
             className={s.employerName}
+            level="h3"
+            display="h5"
             dangerouslySetInnerHTML={{ __html: employer }}
-          ></div>
+          />
         )}
         {location && (
-          <div className={s.locationContainer}>
-            <span className={`${s.locationDivider}`}>-</span>
-            <span className={s.locationText}>
-              <svg className="feather-icon" width="22" height="22">
+          <Text className={s.location}>
+            <span className={s.locationDivider}>-</span>
+            <span className={s.locationIcon}>
+              <svg className="feather-icon" width="18" height="18">
                 <use href="/feather-sprite.svg#map-pin" />
               </svg>
             </span>
             {location}
             {remote && <span className={s.remoteText}>(Remote)</span>}
-          </div>
+          </Text>
         )}
       </div>
-      {positions &&
-        positions.length > 0 &&
-        positions.map((position, posIndex) => (
-          <PositionItem
-            key={posIndex}
-            position={position}
-            isLastPosition={posIndex === positions.length - 1}
-          />
-        ))}
+      {positions && positions.length > 0 && (
+        <div className={s.positionsContainer}>
+          {positions.map((position, posIndex) => (
+            <PositionItem key={posIndex} position={position} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -98,7 +101,7 @@ function WorkExperience({ data, className }: WorkExperienceProps) {
       <Timeline orientation="vertical" compact={true} snapIcon={true}>
         {employmentHistory.map((job: Employment, i: number) => (
           <Timeline.Step key={i}>
-            <Timeline.Middle />
+            <Timeline.Middle style={{ color: "var(--color-primary)" }} />
             <Timeline.End>
               <EmploymentItem job={job} />
             </Timeline.End>

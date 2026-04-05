@@ -5,8 +5,9 @@ import s from "./typography.module.css"
 type TextProps = {
   variant?: "p" | "span" | "div"
   size?: "sm" | "default" | "lg"
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
+  dangerouslySetInnerHTML?: { __html: string }
 }
 
 const Text: React.FC<TextProps> = ({
@@ -14,6 +15,8 @@ const Text: React.FC<TextProps> = ({
   size = "default",
   children,
   className,
+  dangerouslySetInnerHTML,
+  ...props
 }) => {
   const Component = variant
 
@@ -27,6 +30,8 @@ const Text: React.FC<TextProps> = ({
         },
         className
       )}
+      {...props}
+      dangerouslySetInnerHTML={dangerouslySetInnerHTML}
     >
       {children}
     </Component>

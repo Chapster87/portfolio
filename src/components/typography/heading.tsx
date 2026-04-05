@@ -3,12 +3,14 @@ import clsx from "clsx"
 
 import s from "./typography.module.css"
 
+type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+
 type HeadingProps = {
-  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-  display?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-  children: React.ReactNode
+  level: HeadingLevel
+  display?: HeadingLevel
+  children?: React.ReactNode
   className?: string
-}
+} & React.ComponentPropsWithoutRef<HeadingLevel>
 
 const Heading: React.FC<HeadingProps> = ({
   level,

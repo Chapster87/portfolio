@@ -52,23 +52,22 @@ function SectionAccordion({
       collapsible={accordionCollapsible}
     >
       <Accordion.Item className={s.item} value={id}>
-        <Accordion.Header className={s.header}>
-          <Accordion.Trigger className={s.trigger}>
-            <div className={s.title}>
-              {icon && <span className={s.icon}>{icon}</span>}
-              <Heading level="h2" className={s.sectionHeader}>
-                {title}
-              </Heading>
-            </div>
+        <Accordion.Trigger className={s.trigger}>
+          <div className={s.title}>
+            {icon && <span className={s.icon}>{icon}</span>}
+            <Heading level="h2" className={s.sectionHeader}>
+              {title}
+            </Heading>
+          </div>
 
-            <svg className={`feather-icon ${s.plusIcon}`} aria-hidden>
-              <use href="/feather-sprite.svg#plus" />
-            </svg>
-            <svg className={`feather-icon ${s.minusIcon}`} aria-hidden>
-              <use href="/feather-sprite.svg#minus" />
-            </svg>
-          </Accordion.Trigger>
-        </Accordion.Header>
+          <svg className={`feather-icon ${s.plusIcon}`} aria-hidden>
+            <use href="/feather-sprite.svg#plus" />
+          </svg>
+          <svg className={`feather-icon ${s.minusIcon}`} aria-hidden>
+            <use href="/feather-sprite.svg#minus" />
+          </svg>
+        </Accordion.Trigger>
+
         <Accordion.Content className={s.content}>
           <div className={s.contentText}>
             {React.Children.map(children, (child) =>

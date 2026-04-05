@@ -9,7 +9,6 @@ const defaultMiddleIcon = (
     viewBox="0 0 20 20"
     fill="currentColor"
     className={s.svgIcon}
-    style={{ color: "black", height: 20, width: 20 }}
   >
     <path
       fillRule="evenodd"
@@ -94,26 +93,44 @@ function TimelineStep({
 
 interface TimelineStartProps {
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-function TimelineStart({ children }: TimelineStartProps) {
-  return <div className={clsx(s.stepBox, s.stepStart)}>{children}</div>
+function TimelineStart({ children, style }: TimelineStartProps) {
+  return (
+    <div className={clsx(s.stepBox, s.stepStart)} style={style}>
+      {children}
+    </div>
+  )
 }
 
 interface TimelineMiddleProps {
   icon?: React.ReactNode
+  style?: React.CSSProperties
 }
 
-function TimelineMiddle({ icon = defaultMiddleIcon }: TimelineMiddleProps) {
-  return <div className={s.stepMiddle}>{icon && icon}</div>
+function TimelineMiddle({
+  icon = defaultMiddleIcon,
+  style,
+}: TimelineMiddleProps) {
+  return (
+    <div className={s.stepMiddle} style={style}>
+      {icon && icon}
+    </div>
+  )
 }
 
 interface TimelineEndProps {
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
-function TimelineEnd({ children }: TimelineEndProps) {
-  return <div className={clsx(s.stepBox, s.stepEnd)}>{children}</div>
+function TimelineEnd({ children, style }: TimelineEndProps) {
+  return (
+    <div className={clsx(s.stepBox, s.stepEnd)} style={style}>
+      {children}
+    </div>
+  )
 }
 
 Timeline.Step = TimelineStep
