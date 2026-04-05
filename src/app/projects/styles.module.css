@@ -1,0 +1,53 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  gap: 24px;
+
+  @media (--viewport-md-up) {
+    gap: 40px;
+  }
+}
+
+.intro {
+  composes: global-grid-container from global;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--background-overlay);
+  text-align: center;
+}
+
+.anchorRow {
+  composes: global-grid-container from global;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  background-color: var(--background-overlay);
+}
+
+.projectSection {
+  composes: global-grid-container from global;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--background-overlay);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 12px;
+  border-bottom: 2px solid var(--color-grey-400);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

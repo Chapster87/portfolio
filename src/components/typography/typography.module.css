@@ -21,3 +21,11 @@
 .h6 {
   composes: h6 from global;
 }
+
+.smallText {
+  font-size: 14px;
+}
+
+.largeText {
+  font-size: 18px;
+}
