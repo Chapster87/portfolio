@@ -71,7 +71,7 @@ export interface Skills {
 export interface ResumeData {
   businessCard: BusinessCard
   aboutMe: AboutMe
-  employment_history: Employment[]
+  employmentHistory: Employment[]
   education: Education
   certifications: Certification[]
   skills: Skills

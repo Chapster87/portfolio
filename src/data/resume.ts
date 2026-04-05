@@ -30,7 +30,7 @@ const resume = {
     `,
   },
 
-  employment_history: [
+  employmentHistory: [
     {
       employer: "Hydrow",
       location: "Boston, MA",
@@ -40,7 +40,7 @@ const resume = {
           title: "eCommerce Engineer",
           start_date: "Feb 2025",
           notes: [
-            "Professional debut as React engineer on a headless architecture commerce platform. Worked with a",
+            "Professional debut as React engineer on a headless architecture commerce platform.",
           ],
         },
       ],

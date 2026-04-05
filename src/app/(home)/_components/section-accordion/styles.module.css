@@ -38,6 +38,11 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid var(--color-grey-400);
+  cursor: pointer;
+
+  @media (--viewport-lg-up) {
+    cursor: default;
+  }
 }
 
 .title {

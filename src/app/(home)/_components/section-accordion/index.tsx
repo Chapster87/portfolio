@@ -70,7 +70,7 @@ function SectionAccordion({
           </Accordion.Trigger>
         </Accordion.Header>
         <Accordion.Content className={s.content}>
-          <div className={`prose ${s.contentText}`}>
+          <div className={s.contentText}>
             {React.Children.map(children, (child) =>
               typeof child === "string" ? parseHtmlToReact(child, s) : child
             )}

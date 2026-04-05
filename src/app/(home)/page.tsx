@@ -1,15 +1,15 @@
-import Heading from "@/components/typography/heading"
 import Text from "@/components/typography/text"
 import Link from "@/components/link"
 import BusinessCard from "@/components/business-card"
 import ValuePropsCounter from "@/components/value-props-counter"
 import SectionAccordion from "./_components/section-accordion"
+import WorkExperience from "./_components/work-experience"
 import s from "./styles.module.css"
 
 import resume from "@data/resume"
 import { type ResumeData } from "@customTypes/resume-data"
 
-const { businessCard, aboutMe } = resume as ResumeData
+const { businessCard, aboutMe, employmentHistory } = resume as ResumeData
 
 export default function Home() {
   return (
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
       <SectionAccordion
         id="about-me"
-        className={s.pageSection}
+        className={`prose ${s.pageSection}`}
         title="About Me"
         icon={
           <svg className="feather-icon" width="26" height="26">
@@ -73,7 +73,7 @@ export default function Home() {
           </svg>
         }
       >
-        <Text>full-stack developer with a passion for creating</Text>
+        <WorkExperience data={employmentHistory} />
       </SectionAccordion>
     </div>
   )
