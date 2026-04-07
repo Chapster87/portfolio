@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({
         <div className={s.projectMainTop}>
           <div className={s.titleBar}>
             <Heading level="h1" className={s.title}>
-              {title}
+              {title || "Project Name"}
             </Heading>
             {url && (
               <Link className={s.websiteUrl} href={url} openInNewTab nofollow>
@@ -72,34 +72,43 @@ export default async function ProjectDetailPage({
               </Link>
             )}
           </div>
-          <div className={s.detailsRow}>
-            <div className={clsx(s.detail, s.projectDate)}>
-              <Text variant="span" size="lg">
-                <strong>Project Date:</strong>
-              </Text>
-              <Text variant="span" size="lg">
-                {startDate}
-                {endDate && startDate && " - "}
-                {endDate}
-              </Text>
+
+          {(startDate || company || platform) && (
+            <div className={s.detailsRow}>
+              {startDate && (
+                <div className={clsx(s.detail, s.projectDate)}>
+                  <Text variant="span" size="lg">
+                    <strong>Project Date:</strong>
+                  </Text>
+                  <Text variant="span" size="lg">
+                    {startDate}
+                    {endDate && startDate && " - "}
+                    {endDate}
+                  </Text>
+                </div>
+              )}
+              {company && (
+                <div className={clsx(s.detail, s.employer)}>
+                  <Text variant="span" size="lg">
+                    <strong>Employer:</strong>
+                  </Text>
+                  <Text variant="span" size="lg">
+                    {company}
+                  </Text>
+                </div>
+              )}
+              {platform && (
+                <div className={clsx(s.detail, s.platform)}>
+                  <Text variant="span" size="lg">
+                    <strong>Platform:</strong>
+                  </Text>
+                  <Text variant="span" size="lg" className={s.platformBadge}>
+                    {platform}
+                  </Text>
+                </div>
+              )}
             </div>
-            <div className={clsx(s.detail, s.employer)}>
-              <Text variant="span" size="lg">
-                <strong>Employer:</strong>
-              </Text>
-              <Text variant="span" size="lg">
-                {company}
-              </Text>
-            </div>
-            <div className={clsx(s.detail, s.platform)}>
-              <Text variant="span" size="lg">
-                <strong>Platform:</strong>
-              </Text>
-              <Text variant="span" size="lg" className={s.platformBadge}>
-                {platform}
-              </Text>
-            </div>
-          </div>
+          )}
         </div>
         {longDescription && (
           <div className={clsx("prose", s.longDescription)}>

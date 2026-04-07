@@ -21,6 +21,6 @@ export interface Project {
       height: number
     }
   }
-  shortDesc?: string
+  shortDescription?: string
   longDescription?: string
 }
