@@ -1,12 +1,12 @@
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: transparent;
+  padding: 16px 0;
   gap: 24px;
 
-  @media (--viewport-md-up) {
+  @media (--viewport-lg-up) {
+    padding: 32px 0;
     gap: 40px;
   }
 }

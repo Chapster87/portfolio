@@ -12,6 +12,7 @@ type LinkProps = {
   shape?: "standard" | "square" | "circle"
   className?: string
   openInNewTab?: boolean
+  nofollow?: boolean
   buttonStyle?: boolean
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
@@ -23,6 +24,7 @@ const Link: React.FC<LinkProps> = ({
   shape = "standard",
   className,
   openInNewTab = false,
+  nofollow = false,
   buttonStyle = false,
   ...props
 }) => {
@@ -43,7 +45,7 @@ const Link: React.FC<LinkProps> = ({
       href={href}
       className={classes}
       target={openInNewTab ? "_blank" : undefined}
-      rel={openInNewTab ? "noopener noreferrer" : undefined}
+      rel={nofollow ? "noopener noreferrer" : undefined}
       {...props}
     >
       {children}
